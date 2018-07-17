@@ -1,4 +1,0 @@
-<!--payPartyCost.wxml-->
-<view class="classname">
-<button bindtap="pay">缴费{{item}}</button>
-</view>
