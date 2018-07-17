@@ -1,22 +1,28 @@
 <!--pages/my/aboutus/aboutus.wxml-->
-<view class='content'>
+  <scroll-view class="content" scroll-y="true">
 
-  <view class='text_style' >1.项目地址：https://github.com/pengMaster/marry</view>  
+  <view class='text_style' >1.前端github地址：https://github.com/pengMaster/marry</view>  
   <view class="line"> </view>
 
-  <view class='text_style' >2.服务器：阿里云服务</view>  
+  <view class='text_style' >2.后台github地址：https://github.com/pengMaster/marry_server</view>  
   <view class="line"> </view>
 
-  <view class='text_style' >3.域名：pengmaster.com</view>  
+  <view class='text_style' >3.服务器：阿里云服务 - tomcat</view>  
   <view class="line"> </view>
 
-    <view class='text_style'>4.本人为安卓开发，因婚期将至，业余写了个小程序，不足之处，多多指教</view>  
+  <view class='text_style' >4.数据库：阿里云服务 - mysql</view>  
   <view class="line"> </view>
 
-  <view class='text_style' >5.项目中引用网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片资源禁止传播</view>  
+  <view class='text_style' >5.域名：pengmaster.com</view>  
   <view class="line"> </view>
 
-  <view class='text_style' >6.功能简介：
+    <view class='text_style'>6.本人为安卓开发，因婚期将至，业余写了个小程序，不足之处，多多指教</view>  
+  <view class="line"> </view>
+
+  <view class='text_style' >7.项目中引用网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片资源禁止传播</view>  
+  <view class="line"> </view>
+
+  <view class='text_style' >8.功能简介：
     <view class='function_text'>1）新郎新娘不同场景图片展示</view>
     <view class='function_text'>2）婚礼现场导航，妈妈再也不用担心我迷路</view>
     <view class='function_text'>3）点赞祝福，分享好友，备注留言，彰显你陈独秀的潜质</view>
@@ -24,5 +30,5 @@
   </view>  
   <view class="line"> </view>
   <!-- <image src="../../../image/group_qr_code.png"></image> -->
-</view>
+</scroll-view>
 
