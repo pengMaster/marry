@@ -1,0 +1,114 @@
+// payPartyCost.js
+var app = getApp()
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    item:"-申请订单"
+  },
+  pay: function () {
+    var that = this
+    that.item = "-已申请订单"
+    that.setData({
+      item: that.item
+    })
+    that.generateOrder(app.globalData.openId)
+    console.log('-openId: ', app.globalData.openId)
+  },
+  
+  generateOrder: function (openid) {
+    generateOrder(openid)
+  },
+  
+  generateOrder: function (openid) {
+    var that = this
+    //统一支付
+    wx.request({
+      url: 'http://200.200.202.134:8080/party/pay!pay.do',
+      method: 'GET',
+      data: {
+        total_fee: '5',
+        body: '支付测试',
+        attach: '真假酒水',
+        openId: app.globalData.openId
+      },
+      success: function (res) {
+        console.log(res)
+        var pay = res.data
+        //发起支付
+        var timeStamp = pay[0].timeStamp;
+        console.log("timeStamp:" + timeStamp)
+        var packages = pay[0].package;
+        console.log("package:" + packages)
+        var paySign = pay[0].paySign;
+        console.log("paySign:" + paySign)
+        var nonceStr = pay[0].nonceStr;
+        console.log("nonceStr:" + nonceStr)
+        var param = { "timeStamp": timeStamp, "package": packages, "paySign": paySign, "signType": "MD5", "nonceStr": nonceStr };
+        that.pay(param)
+      },
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  /**
+ * 生命周期函数--监听页面加载
+ */
+  onLoad: function () {
+  }
+})

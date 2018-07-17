@@ -1,0 +1,482 @@
+.musics-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.music {
+  height: 100%;
+  background-color: #F5F5F5;
+}
+
+.music-container {
+  position: relative;
+}
+
+.music-cover {
+  width: 100%;
+}
+
+.music-cover-image {
+  width: 100%;
+  height: 500rpx;
+}
+
+.music-control {
+  height: 550rpx;
+  margin: 0 35rpx;
+  padding: 15rpx 20rpx 8rpx 15rpx;
+  position: relative;
+  top: -40px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px #ebebeb;
+}
+
+.music-author {
+  font-weight: 200;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: -200px;
+}
+
+.music-author-avatar {
+  width: 80px;
+  height: 80px;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+
+.music-author-username {
+  padding: 5px;
+  color: #89bdf7;
+}
+
+.music-author-desc {
+  color: #888;
+}
+
+.music-play {
+  float: right;
+}
+
+.music-play-control {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.music-title {
+  font-size: 16px;
+}
+
+.music-maketime {
+  color: #888;
+  font-size: 12px;
+  text-align: right;
+}
+
+.music-content {
+  margin: 0 20rpx 25rpx 20rpx;
+}
+
+.music-content-header {
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+.content-label {
+  float: left;
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+  font-size: 12px;
+}
+
+.content-links {
+  display: inline-block;
+}
+
+.link {
+  width: 35px;
+  height: 18px;
+}
+
+.music-content-body {
+  margin-top: 10px;
+}
+
+.story-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.story-author {
+  color: #89bdf7;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.story-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lyric-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.about-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+/*头像下面整个卡片布局样式  */
+.party_info {
+    width:100%;
+    display:flex;
+    position: relative;
+    top: -150px;
+}
+/*党费提醒整个布局样式*/
+.party_info_left {
+    height: 100%;
+    width:33%;
+    text-align: center;
+}
+/*中间细线 */
+.party_info_mid_line {
+    height: 100rpx;
+    width:2rpx;
+    background-color: white;
+}
+
+/*党费提醒 */
+.party_info_left_text {
+   color: white;
+   text-align: right;
+}
+/*已交至  8月份 */
+.party_info_left_bottom_text {
+   margin-top: 15rpx;
+   color: white;
+   font-size: 15px;
+}
+.party_info_left_bottom_month_text {
+   color: #FD5200;
+   text-align: center;
+   font-size: 16px;
+   font-weight: bold;
+}
+
+/*我的按钮样式  */
+.pay_party_btn {
+  margin-top: 20rpx;
+  height: 100rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  position: relative;
+  top: -30px;
+}
+/*心得旁边图片  */
+.info_img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5rpx;
+  border-radius: 50%;
+}
+/*按钮栏目 */
+.btn_area {
+  position: relative;
+  top: -130px;
+  background-color: white;
+}
+/*基本信息view */
+.base_info_view {
+  display:flex;
+  position: relative;
+  text-align: right;
+}
+/*基本信息字样 */
+.base_info_text {
+  color: #717171;
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+}
+/*箭头 */
+.base_info_right_img {
+   width: 20rpx;
+   height: 40rpx;
+}
+/*箭头 */
+.base_info_right {
+   width: 60%;
+   height: 40rpx;
+  margin-top: 30rpx;
+  text-align: right;
+}
+/*细线 */
+.line {
+    margin-left: 80rpx;
+    margin-top: 10px;
+    height: 2rpx;
+    width:80%;
+    background-color: gainsboro;
+}
+/*版本信息字样 */
+.version_info_text {
+  color: #717171;
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+  margin-bottom: 30rpx;
+}
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;*/
+}
+.btn-line{
+  width: 1px;
+  background-color: #A5A5A5;
+}
+.btn-view{
+  width: 100%;
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  justify-content: space-around
+}
+.line-top{
+   width: 100%;
+   height: 1px;
+   background-color: #A5A5A5;
+}
+.btn-cancel{
+  width: 49%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dialog-title{
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+
+}
+.input-style{
+  width: 96%;
+  margin-left: 2%;
+  height: 30px;
+  text-align: center;
+}
+
+.input-view{
+  height: 30px;
+  width: 70%;
+  margin-left: 15%;
+  border: 1px #A5A5A5 solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+/**login.wxss**/
+page{
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244,244,244,0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+}
+.container {
+  background: #fe5300;
+  align-items: stretch;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 100%
+}
+.content{
+  flex: 1;
+  display: flex;
+  position: relative;
+  z-index: 10;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 550rpx;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244,244,244,0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+  opacity: 0;
+  transform: translate3d(0,100%,0);
+  animation: rise 3s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
+}
+@keyframes rise{
+  0% {opacity: 0;transform: translate3d(0,100%,0);}
+  50% {opacity: 1;}
+  100% {opacity: 1;transform: translate3d(0,450rpx,0);}
+}
+.title{
+  position: absolute;
+  top: 120rpx;
+  left: 50%;
+  width: 600rpx;
+  height: 200rpx;
+  margin-left: -150rpx;
+  opacity: 0;
+  animation: show 2.5s cubic-bezier(0.19, 1, 0.22, 1) .5s forwards;
+  color: white;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+@keyframes show{
+  from {opacity: 0; transform: translate3d(-200rpx,0,0); }
+  to {opacity: 1; transform: translate3d(0,0,0); }
+}
+.remind-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 300rpx;
+}
+.remind-img {
+  width: 250rpx;
+  height: 250rpx;
+  padding-top: 150rpx;
+}
+.hd {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1000rpx;
+  margin-left: -500rpx;
+  height: 200rpx;
+  transition: all .35s ease;
+}
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: -80rpx;
+  border-radius: 160rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: .95;
+}
+@keyframes sway{
+  0% {transform: translate3d(0,20rpx,0) rotate(-15deg); }
+  17% {transform: translate3d(0,0rpx,0) rotate(25deg); }
+  34% {transform: translate3d(0,-20rpx,0) rotate(-20deg); }
+  50% {transform: translate3d(0,-10rpx,0) rotate(15deg); }
+  67% {transform: translate3d(0,10rpx,0) rotate(-25deg); }
+  84% {transform: translate3d(0,15rpx,0) rotate(15deg); }
+  100% {transform: translate3d(0,20rpx,0) rotate(-15deg); }
+}
+.wave {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  opacity: 0.725;
+  height: 260rpx;
+  width: 2250rpx;
+  animation: wave 10s linear infinite;
+}
+.wave-bg {
+  z-index: 1;
+  animation: wave-bg 10.25s linear infinite;
+}
+@keyframes wave{
+  from {transform: translate3d(125rpx,0,0);}
+  to {transform: translate3d(1125rpx,0,0);}
+}
+@keyframes wave-bg{
+  from {transform: translate3d(375rpx,0,0);}
+  to {transform: translate3d(1375rpx,0,0);}
+}
+
+.bd {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: bd-rise 2s cubic-bezier(0.23,1,0.32,1) .75s forwards;
+  opacity: 0;
+  padding-top: 200rpx;
+}
+@keyframes bd-rise{
+  from {opacity: 0; transform: translate3d(0,60rpx,0); }
+  to {opacity: 1; transform: translate3d(0,0,0); }
+}
+
+.confirm-btn {
+  font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #fe5300;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 50rpx 3%;
+}
+.confirm-text{
+    color: #fff;
+}
+.confirm-btn:active {
+  opacity: .8;
+}
+.my_layout{
+  z-index:200;
+  top: 150px;
+  width: 100%;
+  position: absolute;
+}
+.text_user_switch_hint{
+  font-size: 12px;
+}
+

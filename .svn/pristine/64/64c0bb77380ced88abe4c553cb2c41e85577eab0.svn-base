@@ -1,0 +1,91 @@
+//app.js
+var WXBizDataCrypt = require('utils/WXBizDataCrypt.js');
+var AppId = 'wxcde891692d41d8fb'
+var AppSecret = '445735ed17ae39e9983359e74565a6ba'
+
+App({
+  
+  noticeDetailId: null,// 通知公告详情Id
+
+  onLaunch: function () {
+  },
+  getUserInfo: function (cb) {
+    var that = this
+    if (this.globalData.userInfo) {
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    } else {
+      //调用登录接口，获取 code
+      wx.login({
+        success: function (res) {
+          console.log('app_res', res)
+          //发起网络请求
+          wx.request({
+            url: 'https://party.mtm2000.cn/party/mobile/mobileIn.do',
+            data: {
+              appid: AppId,
+              secret: AppSecret,
+              code: res.code,
+              grant_type: 'authorization_code'
+            },
+            header: {
+              method:'GET_OPENID'
+            },
+            method: 'GET',
+            success: function (res) {
+              console.log('app_res', res)
+              // 将openId设成全局
+              that.globalData.openId = res.data.openid
+              that.globalData.user = res.data.user
+              that.globalData.flag = res.data.flag
+       
+              wx.getUserInfo({
+                success: function (res) {
+                  console.log('app_res', res)
+                  // 将userInfo设成全局
+                  that.globalData.userInfo = res.userInfo
+                  that.isRegisterNet()
+                  typeof cb == "function" && cb(that.globalData.userInfo, that.globalData.openId, that.globalData.user, that.globalData.flag)
+                }
+              })
+            },
+            fail: function (res) { },
+            complete: function (res) { }
+          });
+        }
+      })
+    }
+  },
+  globalData: {
+    userInfo: null,
+    openId: null,
+    user:null,
+    flag:null
+  },
+  // 是否认证
+  isRegisterNet: function () {
+    var that = this
+    if (that.globalData.flag) {
+      console.log('that.globalData.flag_if', that.globalData.flag)
+      setTimeout(function () {
+        wx.switchTab({
+          url: '../home/home'
+        });
+      }, 2000)
+    }else{
+      console.log('that.globalData.flag_else', that.globalData.flag)
+      setTimeout(function () {
+        if (null == that.globalData.openId){
+          wx.showToast({
+            title: '请退出重启应用!',
+            image: '../../image/error.png',
+            duration: 2000
+          })
+        }else{
+          wx.navigateTo({
+            url: '../register/register'
+          });
+        }
+      }, 2000)
+    }
+  }
+})

@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">评论</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">点赞</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <!-- 基本信息 -->
+  <swiper-item>
+    <scroll-view class="music" scroll-y="true">
+      <view class="music-container" wx:for="{{comment_list}}" wx:for-index="key" wx:for-item="value"  id="{{value.id}}">
+        <view class="music-control">
+          <!--知识库  -->
+          <view class="knowledge_base_top">
+            文章:{{value.title}}
+          </view>
+          <!--细线  -->
+          <view class="line"> </view>
+          <!--评论人信息  -->
+          <view class="comment_user_info">
+            <image class="comment_user_avater" src="../../../../image/avater_img.png"></image>
+            <!--名字和日期  -->
+            <view>
+              <view class="view_feel">
+                <view class="comment_user_name">{{value.userName}}</view>
+              </view>
+              <view class="comment_user_date">{{value.createTime}}</view>
+            </view>
+          </view>
+          <!--评论  -->
+          <text class="comment_content">
+            {{value.content}}
+          </text>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 附件查看 -->
+  <swiper-item>
+    <scroll-view class="music" scroll-y="true">
+      <view class="music-container" wx:for="{{praise_list}}" wx:for-index="key" wx:for-item="value"  id="{{value.id}}">
+        <view class="music-control">
+          <!--知识库  -->
+          <view class="knowledge_base_top">
+            文章:{{value.title}}
+          </view>
+          <!--细线  -->
+          <view class="line"> </view>
+          <!--评论人信息  -->
+          <view class="comment_user_info">
+            <image class="comment_user_avater" src="../../../../image/avater_img.png"></image>
+            <!--名字和日期  -->
+            <view>
+              <view class="view_feel">
+                <view class="comment_user_name">{{value.userName}}</view>
+              </view>
+              <view class="comment_user_date">{{value.createTime}}</view>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

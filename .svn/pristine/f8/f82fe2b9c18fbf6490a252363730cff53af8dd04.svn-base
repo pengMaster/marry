@@ -1,0 +1,123 @@
+var api = require('../../api/api.js')
+var app = getApp()
+Page({
+  data: {
+   
+  },
+  //生命周期函数--监听页面加载
+  onLoad: function () {
+    var that = this
+    if (app.globalData.user.endTime.length >= 8) {
+      var endTime = app.globalData.user.endTime.substring(0, 7)
+    } else {
+      var endTime = "未交费"
+    }
+    that.setData({
+      endTime: endTime,
+      //图片地址
+      homeBanner: api.homeBanner,
+      homeAvater: api.homeAvater,
+      homePartyRecord: api.homePartyRecord,
+      homeServiceGuide: api.homeServiceGuide
+    })
+  },
+  // 缴纳党费点击事件
+  btnPayParty: function (event) {
+    wx.navigateTo({
+      url: '../home/payPartyCost/payPartyCost'
+    })
+  },
+  // 党费记录查询点击事件
+  btnPartyRecordQuery: function (event) {
+    wx.navigateTo({
+      url: '../home/partyRecord/partyRecord'
+    });
+  },
+  // 服务指南点击事件
+  btnServiceGuide: function (event) {
+    wx.navigateTo({
+      url: '../home/serviceGuide/serviceGuide'
+    })
+  },
+  // 通知公告点击事件
+  btnNotice: function (event) {
+    wx.navigateTo({
+      url: '../home/notice/notice'
+    });
+  },
+  // 下载通知公告数据
+  NoticeListNet: function () {
+    var that = this
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'GET_NOTICE_LIST',
+      },
+      data: {
+        // type（0.公告  1.服务指南）
+        userId: getApp().globalData.user.id,
+        type: '0'
+      },
+      success: function (res) {
+        if (200 == res.statusCode) {
+          //更新数据
+          that.setData({
+            count: res.data.length
+          })
+        }
+      },
+    })
+  },
+  
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var that = this
+    that.NoticeListNet()
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

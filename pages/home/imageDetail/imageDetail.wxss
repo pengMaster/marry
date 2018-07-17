@@ -1,0 +1,34 @@
+/* pages/home/imageDetail/imageDetail.wxss */
+.el-bgimg {
+  width: 100%;
+}
+.horizontal{
+     display: flex; 
+     width: 90%;
+     margin: 20px;
+     text-align: center
+}
+.horizontal_image{
+     display: flex; 
+     width: 100%;
+     margin: 20px;
+}
+.image_margin_10{
+     margin: 10px
+}
+.vertical_center{
+  height: 300px;
+  width: 300px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.horizontal_center{
+  width: 90%;
+  margin: 20px;
+  border: solid 1px rgb(100, 60, 27);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

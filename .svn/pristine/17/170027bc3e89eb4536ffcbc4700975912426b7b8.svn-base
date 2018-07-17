@@ -1,0 +1,29 @@
+<view class="view">
+  <scroll-view class="scroll_view" scroll-y :true>
+    <view class="title_gray_info">精彩评论</view>
+    <view wx:for="{{comment_list}}" wx:for-item="value">
+      <!--评论人信息  -->
+      <view class="comment_user_info">
+        <image class="comment_user_avater" src="../../../../image/heart1.png"></image>
+        <!--名字和日期  -->
+        <view>
+          <view class="comment_user_name">小茹年</view>
+          <view class="comment_user_date">{{value.createTime}}</view>
+        </view>
+      </view>
+      <!--评论  -->
+      <view class="comment_content">
+        {{value.content}}
+      </view>
+      <view class="line"></view>
+    </view>
+  </scroll-view>
+  <!--评论  -->
+  <view class="bottom_view">
+    <view class="view1">
+      <input class="input_max" placeholder="写评论.." bindinput="ContentInput" value="{{inputValue}}" />
+      <text class="send" bindtap="btnSend">发送</text>
+    </view>
+    <view class="line_input"></view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view class="container">
+  <scroll-view class="music" scroll-y="true">
+        <view class="music-cover">
+        <image class="music-cover-image" src="../../image/home_banner.png" mode="aspectFill"></image>
+        </view>
+         <view class="music-control">
+            <!-- 头像 -->
+            <view class="music-author">
+              <image class="music-author-avatar" src="../../image/home_avater.png" mode="aspectFill"></image>
+            </view>
+            <view class="party_info">
+            <!-- 党费提醒左边布局 -->
+              <view class="party_info_left">
+                  <text class="party_info_left_text">党费提醒</text>
+                      <!-- 已交至 -->
+                      <view class="party_info_left_bottom_text">
+                      <text>已交至</text>
+                      <!-- 月份 -->
+                      <view class="party_info_left_bottom_month_text">
+                        <text>8月份</text>
+                      </view>
+                      </view>
+                  
+              </view>
+              <!-- 中间线 -->
+              <text class="party_info_mid_line"></text>
+              <!-- 党费提醒右边布局 --> 
+              <view class="party_info_right">
+                  <text class="party_info_right_text">通知公告</text>
+                      <!-- 条数 -->
+                        <view class="party_info_right_bottom_count_text">
+                        <text>11条</text>
+                        <!-- 未读条数 -->
+                        <view class="party_info_right_bottom_text">
+                          <text>未读条数</text>
+                        </view>
+                        </view>
+              </view>
+            </view>
+            <!--缴纳党费按钮  -->
+            <button class="pay_party_btn"  bindtap="btnPayParty">
+            <text>缴纳党费</text>
+            </button>
+            <!-- 党费记录查询 服务指南 -->
+            <view class="query_help">
+                <!--党费记录查询  -->
+                <view class="record_query">
+                <image class="record_query_content_avatar" src='../../image/home_party_cost_record_query.png'></image>
+                  <text class="record_query_content_text">党费记录查询</text>
+                </view>
+                <!--服务指南  -->
+                <view class="servise_guide">
+                <image class="record_query_content_avatar" src='../../image/home_service_guide.png'></image>
+                  <text class="record_query_content_text">服务指南</text>
+                </view>
+            </view>
+      </view>
+  </scroll-view>
+</view>

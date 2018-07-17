@@ -1,0 +1,26 @@
+<!--payPartyCost.wxml-->
+<view class="classname">
+<view class="music-container">
+      <view class="music-control">
+      <!--知识库  -->
+           <view class="knowledge_base_top">
+           <text class="knowledge_base_title">知识库</text>
+           <view class="knowledge_base_more">
+           <text >更多>></text>
+           </view>
+           </view>
+          <!--细线  -->
+          <view class="line"> </view>
+          <!--讲话内容title  -->
+          <text class="knowledge_base_content_title">讲话内容</text>
+          <view>
+              <!--讲话内容  -->
+            <text class="knowledge_base_content">第一条　为维护党的章程和其他党内法规，严肃党的纪律，纯洁党的组织，保障党员民主权利，教育党员遵纪守法，维护党的团结统一，保证党的路线、方针、政策、决议和国家法律法规的贯彻执行，根据《中国共产党章程》，制定本条例。
+　　        第二条　本条例以马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观为指导，深入贯彻习近平总书记系列重要讲话精神，落实全面从严治党战略部署。
+　　        </text>
+          </view>
+      </view>
+    </view>
+    
+<button bindtap="pay" style=" margin-top:20rpx">缴费{{item}}</button>
+</view>

@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="card_wrap">
+    <view bindtouchend="slidethis" animation="{{ animationlist[id] }}" class="card_item card{{ id + 1 }} zindex{{ zindex[(2-id)] }} " wx:for="{{ cardInfoList }}"  wx:key="unique" wx:for-index="id" wx:for-item="item">
+      <span class="change_icon" bindtap="slidethis">
+        <image src="/console/images/card/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+        <blockquote class="card_info_mes_title">{{ item.cardInfo.cardTitle }}</blockquote>
+
+        <span class="card_info_mes_item font-light content3" wx:for="{{item.cardInfo.cardInfoMes }}"  wx:key="unique2" wx:for-index="idx" wx:for-item="cradMes"  style="margin-top: {{  idx === 0 ? 15 : 0 }}px;">
+          {{ cradMes }}
+        </span>
+        <!-- <span class="card_info_mes_item">一月两送，有趣节日送奇异花</span>
+        <span class="card_info_mes_item">一月四送，有你在每天都是最好的节日</span> -->
+      </view>
+      <view class="btn-cta buy_btn" id="{{ id }}" bindtap="buythis">订购烂漫计划</view>
+      <image src="{{ item.cardUrl }}"></image>
+    </view>
+    <!-- <view class="card_item card2">
+      <span class="change_icon">
+        <image src="/console/images/card/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+        <blockquote class="card_info_mes_title">你不知道的花事</blockquote>
+        <span class="card_info_mes_item" style="margin-top: 15px;">
+          一月一送，浪漫节日送浪漫花
+        </span>
+        <span class="card_info_mes_item">一月两送，有趣节日送奇异花</span>
+        <span class="card_info_mes_item">一月四送，有你在每天都是最好的节日</span>
+      </view>
+      <image src="/console/images/card/card2.png"></image>
+    </view>
+    <view class="card_item card3">
+      <span class="change_icon">
+        <image src="/console/images/card/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+        <blockquote class="card_info_mes_title">你不知道的花事</blockquote>
+        <span class="card_info_mes_item" style="margin-top: 15px;">
+          一月一送，浪漫节日送浪漫花
+        </span>
+        <span class="card_info_mes_item">一月两送，有趣节日送奇异花</span>
+        <span class="card_info_mes_item">一月四送，有你在每天都是最好的节日</span>
+      </view>
+      <image src="/console/images/card/card1.png"></image>
+    </view> -->
+  </view>
+</view>

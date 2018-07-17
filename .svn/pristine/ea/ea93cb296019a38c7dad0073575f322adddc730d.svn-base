@@ -1,0 +1,37 @@
+import api from '../../api/api.js'
+var app = getApp()
+Page({
+  data: {
+    endTime:""
+  },
+  // 缴纳党费点击事件
+  btnPayParty: function (event) {
+    wx.navigateTo({
+      url: '../home/payPartyCost/payPartyCost'
+    })
+  },
+  // 党费记录查询点击事件
+  btnPartyRecordQuery: function (event) {
+    wx.navigateTo({
+      // url: '../home/partyRecordQuery/partyRecordQuery'
+      url: '../home/partyRecordQuery/partyRecordQuery'
+    });
+  },
+  // 服务指南点击事件
+  btnServiceGuide: function (event) {
+    wx.navigateTo({
+      url: '../home/serviceGuide/serviceGuide'
+    });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this
+    that.endTime = app.globalData.user.endTime
+    that.setData({
+      endTime: that.endTime
+      
+    })
+  }
+})

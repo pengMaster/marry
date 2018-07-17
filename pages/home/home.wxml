@@ -1,0 +1,42 @@
+<view wx:if="{{music_url}}">
+  <view wx:if="{{isPlayingMusic}}">
+    <view class="background_music" bindtap="play">
+      <image src="/image/music_icon.png" class="musicImg music_icon"/>
+      <image src="/image/music_play.png" class="music_play pauseImg" />
+    </view>
+  </view>
+  <view wx:else>
+    <view class="background_music" bindtap="play">
+      <image src="/image/music_icon.png" class="musicImg"/>
+      <image src="/image/music_play.png" class="music_play playImg" />
+    </view>
+  </view>
+</view>
+<view class="container">
+  <scroll-view class="content" scroll-y="true">
+
+    <swiper indicator-dots="{{indicatorDots}}" class='banner_style'
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}"  wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" class="banner_image_style" />
+        </swiper-item>
+      </block>
+    </swiper>
+    
+    <view class='list bannerStyle'  wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <view class='list-title'>
+            <view  class="text-moreDay">
+            <text class="name">{{item.type}}</text>      
+            </view>
+        </view>
+        <view class='imgList' bindtap='jump' data-id="{{item.type}}">
+            <view>
+                <image mode='scaleToFill' src='{{item.imgUrl}}' data-type="imgUrls" data-img="{{item.imgUrl}}" data-index="0"></image>
+            </view>
+        </view>
+       <view class="jump" data-id="{{item.type}}" bindtap='jump'>查看详情</view>
+    </view>
+
+  </scroll-view>
+</view>

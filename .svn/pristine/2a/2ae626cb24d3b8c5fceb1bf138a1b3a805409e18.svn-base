@@ -1,0 +1,55 @@
+.music {
+  height: 100%;
+  background-color: #F5F5F5;
+}
+.music-container {
+  margin-top: 30rpx;
+}
+.music-control {
+  margin-top: 20rpx;
+  height: 550rpx;
+  margin: 0 35rpx;
+  padding: 15rpx 20rpx 8rpx 15rpx;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px #ebebeb;
+}
+/*知识库  */
+.knowledge_base_top {
+      width: 100%;
+      display:flex;
+}
+/*标题字样 */
+.knowledge_base_title {
+  color: black;
+  font-size: 15px;
+   font-weight: bolder;
+}
+/*更多>>  */
+.knowledge_base_more {
+     width: 80%;
+     text-align: right;
+     color: blue;
+     font-size: 11px;
+}
+/*细线 */
+.line {
+   margin-top: 10px;
+   margin-bottom: 20rpx;
+    height: 2rpx;
+    width:100%;
+    background-color: gray;
+}
+/*知识库内容title */
+.knowledge_base_content_title {
+  color: gray;
+  font-size: 16px;
+  font-weight: bolder;
+}
+/*知识库内容 */
+.knowledge_base_content {
+  color: gray;
+  font-size: 10px;
+}

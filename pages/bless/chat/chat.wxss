@@ -1,0 +1,101 @@
+/* pages/chat/index.wxss */
+.container{
+  background-color: #f1f2f7;
+}
+page {
+    background-color: #f1f2f7;
+    padding-bottom: 150rpx;
+}
+.chat_list {
+    width: 630rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    padding: 30rpx;
+    min-height: 0;
+    overflow: hidden;
+    background-color: #f1f2f7;
+    border-radius: 5px;
+    box-shadow:  0 0 20px rgba(190,77,43,.2);
+}
+.chat_face {
+    width: 100rpx;
+    height: 100rpx;
+    float: left;
+    margin-right: 30rpx;
+    margin-top: 30rpx;
+}
+.chat_face image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+.chat_words {
+    width: 500rpx;
+    float: left;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #999;
+}
+.chat_meta {
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+    margin-bottom: 10rpx;
+}
+.chat_user {
+    display: inline-block;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #666;
+    float: left;
+}
+.chat_date {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #ccc;
+    float: right;
+}
+
+.send_msg {
+    width: 700rpx;
+    padding: 25rpx;  
+    background-color: #fff;
+    min-height: 0;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+
+}
+.send_ipt {
+    width: 500rpx;
+    padding: 10rpx;
+    font-size: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    float: left;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+.send_btn {
+    width: 150rpx;
+    height: 80rpx;
+    font-size: 36rpx;
+    line-height: 80rpx;
+    float: right;
+}
+
+.befirst {
+    width: 600rpx;
+    height: 450rpx;
+    margin: 0 auto;
+    min-height: 0;
+    overflow: hidden;
+    margin-top: 200rpx;
+}
+.befirst image{
+    width: 600rpx;
+    height: 450rpx;
+}

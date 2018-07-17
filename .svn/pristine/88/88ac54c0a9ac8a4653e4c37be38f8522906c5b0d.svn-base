@@ -1,0 +1,54 @@
+//app.js
+var WXBizDataCrypt = require('utils/WXBizDataCrypt.js');
+var AppId = 'wxcde891692d41d8fb'
+var AppSecret = '445735ed17ae39e9983359e74565a6ba'
+
+App({
+  onLaunch: function () {
+  },
+  getUserInfo: function (cb) {
+    var that = this
+    if (this.globalData.userInfo) {
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    } else {
+      //调用登录接口，获取 code
+      wx.login({
+        success: function (res) {
+          //发起网络请求
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session',
+            data: {
+              appid: AppId,
+              secret: AppSecret,
+              js_code: res.code,
+              grant_type: 'authorization_code'
+            },
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: 'GET',
+            success: function (res) {
+              // 将openId设成全局
+              that.globalData.openId = res.data.openid
+              var pc = new WXBizDataCrypt(AppId, res.data.session_key)
+              wx.getUserInfo({
+                success: function (res) {
+                  // 将userInfo设成全局
+                  that.globalData.userInfo = res.userInfo
+                  var data = pc.decryptData(res.encryptedData, res.iv)
+                  typeof cb == "function" && cb(that.globalData.userInfo, that.globalData.openId)
+                }
+              })
+            },
+            fail: function (res) { },
+            complete: function (res) { }
+          });
+        }
+      })
+    }
+  },
+  globalData: {
+    userInfo: null,
+    openId: null
+  }
+})

@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+          <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+          <image class="wave" src="{{wave}}" mode="aspectFill"></image>
+          <image class="wave wave-bg" src="{{wave}}" mode="aspectFill"></image>
+      </view>
+       <view class='my_layout'>
+         <view class="btn_area">
+      <!--身份切换  -->
+      <view class="base_info_view" bindtap="btnSwitchUser">
+        <text class="base_info_text">身份切换</text>
+        <view class="base_info_right">
+          <text class="text_user_switch_hint">{{user_identity}}</text>
+        </view>
+      </view>
+         <!--细线  -->
+      <view class="line"> </view>
+      <!--我的制作  -->
+      <view class="base_info_view" bindtap="btnMyCreate">
+        <text class="base_info_text">我的制作</text>
+        <view class="base_info_right">
+          <image class="base_info_right_img" src="{{myArrowChart}}"></image>
+        </view>
+      </view>
+
+      <!--细线  -->
+      <view class="line"> </view>
+      <!--常见问题  -->
+      <view class="base_info_view" bindtap="btnCommonQuestion">
+        <text class="base_info_text">项目简介</text>
+        <view class="base_info_right">
+          <image class="base_info_right_img" src="{{myArrowChart}}"></image>
+        </view>
+      </view>
+
+         <!--细线  -->
+      <view class="line"> </view>
+      <!--关于我呀  -->
+      <view class="base_info_view" bindtap="btnAboutMy">
+        <text class="base_info_text">关于我呀</text>
+        <view class="base_info_right">
+          <image class="base_info_right_img" src="{{myArrowChart}}"></image>
+        </view>
+      </view>
+
+        <!--细线  -->
+      <view class="line"> </view>
+      <!--分享好友  -->
+      <view class="base_info_view" bindtap="btnShareFriends">
+        <text class="version_info_text">分享好友</text>
+        <view class="base_info_right">
+          <image class="base_info_right_img" src="{{myArrowChart}}"></image>
+        </view>
+      </view>
+
+    </view>
+       </view>
+    </view>
+</view>

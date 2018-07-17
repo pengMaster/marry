@@ -1,0 +1,73 @@
+<!--输入框  -->
+<view class="view">
+  <!--微信名称  -->
+  <view class="base_info_view">
+    <text class="info_text">微信名称</text>
+    <text class="text_value">{{name}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--用户名  -->
+  <view class="base_info_view">
+    <text class="info_text">用户名</text>
+    <text class="text_value">{{account}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--住址  -->
+  <view class="base_info_view">
+    <text class="info_text">住址</text>
+    <text class="text_value">{{address}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--开始交党费日期  -->
+  <view class="base_info_view">
+    <text class="info_text">开始交党费日期</text>
+    <text class="text_value">{{startTime}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--党费交至日期  -->
+  <view class="base_info_view">
+    <text class="info_text">党费交至日期</text>
+    <text class="text_value">{{endTime}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--入党时间  -->
+  <view class="base_info_view">
+    <text class="info_text">入党时间</text>
+    <text class="text_value">{{joiningTime}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--月收入  -->
+  <view class="base_info_view">
+    <text class="info_text">月收入</text>
+    <text class="text_value">{{salary}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--证件类型  -->
+  <view class="base_info_view">
+    <text class="info_text">证件类型</text>
+    <text class="text_value">{{cardType}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--证件号码  -->
+  <view class="base_info_view">
+    <text class="info_text">证件号码</text>
+    <text class="text_value">{{idcard}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+  <!--手机号  -->
+  <view class="base_info_view">
+    <text class="info_text">手机号</text>
+    <text class="text_value">{{phone}}</text>
+  </view>
+  <!--细线  -->
+  <view class="line"> </view>
+</view>

@@ -1,0 +1,29 @@
+
+<!--pages/invitation/index.wxml-->
+<view class="container">
+  <view class="savethedate">
+    <image src="/image/save_the_date_pu.gif" width="100%"/>
+  </view>
+  <view class="name">
+    <span class="fl">王鹏</span>
+    <span class="fr">刘文文</span>  
+  </view>
+  <view class="diamond">
+    <image src="/image/diamond-divider.png" width="100%"/>
+  </view>
+  <view class="date">
+    <view>本人兹定于 2018年8月18日</view>
+    <view>农历 2018年7月初8</view>
+    <view>举办婚礼</view>
+  </view>
+  <view class='detail'>
+    <view class="s_icon"><image src="/image/hotel.png"/></view>
+    <view class="address">席设:沧州市盐山县庆云镇前簸箕村</view>
+    <view bindtap="markertap" class="s_icon"><image src="/image/address.png"/></view>
+    <view class="address">地址:沧州市盐山县庆云镇前簸箕村(点击导航)</view>
+  </view>
+  <view class="words">
+    <image src="/image/words.png" width="100%"/>
+  </view>
+</view>
+<!-- <map id="map" longitude="117.398193" latitude="37.895525" scale="11" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 200px;"></map> -->

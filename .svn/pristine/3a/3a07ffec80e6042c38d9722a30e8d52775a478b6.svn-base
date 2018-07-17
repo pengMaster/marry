@@ -1,0 +1,294 @@
+/**login.wxss**/
+
+page {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244, 244, 244, 0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+}
+
+.container {
+  background: #fe5300;
+  align-items: stretch;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244, 244, 244, 0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+  transform: translate3d(0, 100%, 0);
+  animation: rise 3s cubic-bezier(0.19, 1, 0.22, 1) 0.25s forwards;
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 450rpx, 0);
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-200rpx, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.remind-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 300rpx;
+}
+
+.remind-img {
+  width: 250rpx;
+  height: 250rpx;
+  padding-top: 150rpx;
+}
+
+.hd {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1000rpx;
+  margin-left: -500rpx;
+  height: 200rpx;
+  transition: all 0.35s ease;
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: -80rpx;
+  border-radius: 160rpx;
+  animation: sway 10s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+@keyframes sway {
+  0% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+
+  17% {
+    transform: translate3d(0, 0rpx, 0) rotate(25deg);
+  }
+
+  34% {
+    transform: translate3d(0, -20rpx, 0) rotate(-20deg);
+  }
+
+  50% {
+    transform: translate3d(0, -10rpx, 0) rotate(15deg);
+  }
+
+  67% {
+    transform: translate3d(0, 10rpx, 0) rotate(-25deg);
+  }
+
+  84% {
+    transform: translate3d(0, 15rpx, 0) rotate(15deg);
+  }
+
+  100% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+}
+
+.wave {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  opacity: 0.725;
+  height: 260rpx;
+  width: 2250rpx;
+  animation: wave 10s linear infinite;
+}
+
+.wave-bg {
+  z-index: 1;
+  animation: wave-bg 10.25s linear infinite;
+}
+
+@keyframes wave {
+  from {
+    transform: translate3d(125rpx, 0, 0);
+  }
+
+  to {
+    transform: translate3d(1125rpx, 0, 0);
+  }
+}
+
+@keyframes wave-bg {
+  from {
+    transform: translate3d(375rpx, 0, 0);
+  }
+
+  to {
+    transform: translate3d(1375rpx, 0, 0);
+  }
+}
+
+.bd {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: bd-rise 2s cubic-bezier(0.23, 1, 0.32, 1) 0.75s forwards;
+  opacity: 0;
+  padding-top: 200rpx;
+}
+
+@keyframes bd-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 60rpx, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.confirm-btn {
+  font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #fe5300;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 50rpx 3%;
+}
+
+.confirm-text {
+  color: #fff;
+}
+
+.confirm-btn:active {
+  opacity: 0.8;
+}
+
+.music-container {
+  position: relative;
+}
+
+.music-cover {
+  width: 100%;
+}
+
+.music-cover-image {
+  width: 100%;
+  height: 500rpx;
+}
+
+.music-author {
+  font-weight: 200;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: -150px;
+}
+
+.music-author-avatar {
+  width: 80px;
+  height: 80px;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+
+/*输入区域 */
+
+.btn_area {
+  position: relative;
+  background-color: white;
+  top: -260rpx;
+}
+
+/*view */
+
+.base_info_view {
+  display: flex;
+}
+
+/*提示 */
+
+.info_text {
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  font-size: 15px;
+}
+
+/*输入框 */
+
+.input_max {
+  width: 70%;
+  margin-top: 35rpx;
+  margin-left: 30rpx;
+  font-size: 15px;
+}
+
+/*部门选择框 */
+
+.picker {
+  width: 70%;
+  margin-top: 35rpx;
+  margin-left: 30rpx;
+  font-size: 15px;
+  color: gray;
+}
+
+/*细线 */
+
+.line {
+  margin-left: 120rpx;
+  margin-top: 5px;
+  height: 2rpx;
+  width: 65%;
+  background-color: gainsboro;
+}
+
+/*版本信息字样 */
+
+.version_info_text {
+  color: #717171;
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+  margin-bottom: 30rpx;
+}
+
+/*开始认证按钮  */
+
+.register_btn {
+  margin: 10rpx;
+  margin-top: 30rpx;
+  height: 100rpx;
+  top: -200rpx;
+  background-color: #fe5300;
+  font-size: 20px;
+  color: white;
+}

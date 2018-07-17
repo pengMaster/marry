@@ -1,0 +1,21 @@
+<!--pages/home/imageDetail/imageDetail.wxml-->
+<view bindtap='onclickImage'>
+    <image data-src="{{imgUrls[0].imgUrl}}" bindtap="previewImage" src="{{imgUrls[0].imgUrl}}" class="el-bgimg" mode='scaleToFill'> </image>
+
+  <view class='horizontal_center'>
+         <image src="https://res.zhangu365.com/syspic/img/a9f3d11e9af7360b4653e585ab0b8568.png"  class="el-bgimg" style="display: block; width: 40px; height: 96px; top: 0px; left: 0px; border-radius: 0px; box-shadow: black 0px 0px 0px; border-style: none;">
+    </image>
+
+    <text  style="width: 174.5px; height: 79px; font-family: guiqi; border-color: rgb(0, 0, 0); border-style: none; border-radius: 0px; font-style: normal; font-weight: normal; text-align: center; color: rgb(100, 60, 27); font-size: 13px; line-height: 1.5; box-shadow: black 0px 0px 0px; letter-spacing: 0px; top: 0px; left: 0px;">不管你走在哪里我都会站在你看得见的地方如果有委屈有过错只要你回头我始终站在你的身后</text>
+
+    <image src="https://res.zhangu365.com/syspic/img/a3f6198f3d16b1e25a1905ea35f17fa2.png" class="el-bgimg" style="display: block; width: 40px; height: 96px; top: 0px; left: 0px; border-radius: 0px; box-shadow: black 0px 0px 0px; border-style: none;"></image>
+  </view>
+ 
+  <view class='horizontal_image'>
+
+    <image data-src="{{imgUrls[1].imgUrl}}" bindtap="previewImage" class='image_margin_10' src='{{imgUrls[1].imgUrl}}' mode='scaleToFill' style='display: block; width: 149px; height: 151px; top: 0px; left: 0px; border-radius: 0px; box-shadow: black 0px 0px 0px; border-style: none;'></image>
+
+    <image data-src="{{imgUrls[2].imgUrl}}" bindtap="previewImage" class='image_margin_10' src='{{imgUrls[2].imgUrl}}' mode='scaleToFill' style='display: block; width: 149px; height: 151px; top: 0px; left: 0px; border-radius: 0px; box-shadow: black 0px 0px 0px; border-style: none;'></image>
+  </view>
+
+</view>

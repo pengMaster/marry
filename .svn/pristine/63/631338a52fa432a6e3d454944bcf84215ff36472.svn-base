@@ -1,0 +1,350 @@
+.title_gray_info {
+  background-color: #E5E9E8;
+  padding: 12rpx;
+  font-size: 12px;
+  color: #333;
+}
+
+.view {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll_view {
+  height: 100%;
+  width: 100%;
+  background-color: #f0f4f7;
+}
+
+/*评论人信息  */
+
+.comment_user_info {
+  display: flex;
+}
+
+.comment_user_avater {
+  margin: 10rpx;
+  height: 70rpx;
+  width: 70rpx;
+}
+
+.comment_user_name {
+  font-size: 11px;
+  color: #333;
+  padding: 12rpx;
+}
+
+.comment_user_date {
+  font-size: 10px;
+  color: gray;
+}
+
+/*评论内容  */
+
+.comment_content {
+  text-align: left;
+  width: 80%;
+  font-size: 12px;
+  color: #333;
+  display: flex;
+  margin-left: 80rpx;
+  margin-right: 10rpx;
+}
+
+/*细线  */
+
+.line {
+  margin-top: 20rpx;
+  background-color: #E5E9E8;
+  width: 100%;
+  text-align: center;
+  height: 4rpx;
+}
+
+.line_input {
+  margin-bottom: 10rpx;
+  background-color: #E5E9E8;
+  width: 100%;
+  text-align: center;
+  height: 4rpx;
+}
+
+/*底部评论区域  */
+
+.bottom_view {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.view1 {
+  display: flex;
+}
+/*输入框 */
+
+.input_max {
+  width: 90%;
+  margin-left: 30rpx;
+  font-size: 12px;
+}
+/*发送  */
+.send{
+  width: 10%;
+  margin-top: 12rpx;
+  font-size: 12px;
+}
+.view_feel{
+  display: flex;
+}
+.feelings_title{
+  margin-top: 45rpx;
+  position: fixed;
+  right: 20rpx;
+  font-size: 12px;
+}
+
+.music {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.music-container {
+  margin-top: 30rpx;
+}
+
+.music-control {
+  margin-top: 20rpx;
+  margin: 0 35rpx;
+  padding: 15rpx 20rpx 8rpx 15rpx;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px #ebebeb;
+}
+
+
+.knowledge_base_content_view {
+  margin-top: 15rpx;
+  width: 100%;
+  display: flex;
+  margin-bottom: 15rpx;
+}
+
+/*标题字样 */
+
+.knowledge_base_title {
+  color: black;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+/*更多>>  */
+
+.knowledge_base_more {
+  text-align: right;
+  font-size: 11px;
+}
+
+/*细线 */
+
+.line {
+  margin-top: 10px;
+  margin-bottom: 20rpx;
+  height: 6rpx;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/*知识库内容title */
+
+.knowledge_base_content_title {
+  color: gray;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+/*知识库内容 */
+
+.knowledge_base_content {
+  text-align: left;
+  color: gray;
+  font-size: 12px;
+}
+
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #777;
+}
+
+.on {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+/* 点赞和评论 pages/waveimage/waveimage.wxss */
+
+.v-body {
+  display: flex;
+  position: relative;
+}
+
+.myCanvas {
+  background-color: transparent;
+  width: 90px;
+  height: 400px;
+}
+
+.v-canvas {
+  position: fixed;
+  right: 35px;
+  bottom: 120px;
+  width: 90px;
+  background-color: transparent;
+}
+
+.v-img {
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+}
+.v-img_leave {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+}
+
+.bt-img {
+  width: 40px;
+  height: 40px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -webkit-transition: ease all;
+  -moz-transition: ease all;
+  transition: ease all;
+  -webkit-transition-duration: 700ms;
+  -moz-transition-duration: 700ms;
+  transition-duration: 700ms;
+}
+
+.bt-img_leave {
+  width: 25px;
+  height: 25px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -webkit-transition: ease all;
+  -moz-transition: ease all;
+  transition: ease all;
+  -webkit-transition-duration: 700ms;
+  -moz-transition-duration: 700ms;
+  transition-duration: 700ms;
+}
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.music {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.music-container {
+  margin-top: 30rpx;
+}
+
+.music-control {
+  margin-top: 20rpx;
+  margin: 0 35rpx;
+  padding: 15rpx 20rpx 8rpx 15rpx;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px #ebebeb;
+}
+
+/*知识库  */
+
+.knowledge_base_top {
+  display: flex;
+  margin-top: 15rpx;
+  width: 100%;
+  color: black;
+  font-size: 14px;
+
+}
+
+/*更多>>  */
+
+.knowledge_base_more {
+  text-align: right;
+  font-size: 11px;
+}
+
+/*细线 */
+
+.line {
+  margin-top: 10px;
+  margin-bottom: 20rpx;
+  height: 6rpx;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/*知识库内容title */
+
+.knowledge_base_content_title {
+  color: gray;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+/*知识库内容 */
+
+.knowledge_base_content {
+  margin-bottom: 10rpx;
+  color: gray;
+  font-size: 12px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.v-img {
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+}

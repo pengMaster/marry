@@ -1,0 +1,57 @@
+/* pages/bless/index.wxss */
+.title {
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+.friends {
+  min-height: 0;
+  overflow: hidden;
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.face {
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  margin: 10rpx;
+}
+.face image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.btn_zone {
+  padding: 30rpx 50rpx;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 20rpx;
+  display: flex
+}
+.zan {
+  width: 300rpx;
+}
+.share {
+  width: 300rpx;
+  margin-left: 20px;
+}
+.bless_img {
+  width: 400rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}
+
+.bless_img image{
+  width: 400rpx;
+  height: 300rpx;
+}
+.tips {
+  text-align: center;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #ccc;
+}

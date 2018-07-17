@@ -1,0 +1,53 @@
+<scroll-view class="music" scroll-y="true">
+  <view class="music-container">
+    <view class="music-cover">
+      <image class="music-cover-image" src="../../image/my_banner.jpg" mode="aspectFill"></image>
+    </view>
+    <!-- 头像 -->
+
+    <view class="music-author">
+      <text class="title">{{userInfo.nickName}}</text>
+      <view class="music-author-avatar">
+        <view class="hd" style="transform:rotateZ({{angle}}deg);">
+          <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+          <image class="wave" src="/image/more/wave.png" mode="aspectFill"></image>
+          <image class="wave wave-bg" src="/image/more/wave.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+    <!--输入框  -->
+    <view class="btn_area">
+      <!--姓名  -->
+      <view class="base_info_view">
+        <text class="info_text">姓名:</text>
+        <input class="input_max" placeholder="请输入" bindinput="NameInput" />
+      </view>
+      <!--细线  -->
+      <view class="line"> </view>
+      <!--手机号  -->
+      <view class="base_info_view">
+        <text class="info_text">手机号:</text>
+        <input class="input_max" placeholder="请输入" bindinput="PhoneInput" />
+      </view>
+      <!--细线  -->
+      <view class="line"> </view>
+      <!-- 所属部门  
+      <view class="base_info_view">
+        <text class="info_text">所属部门:</text>
+        <picker class="picker" value="{{dept}}" range="{{picker1Range}}" bindchange="DeptPickerBindchange">
+          {{picker1Range[dept]}}
+        </picker>
+      </view>
+      <!--细线 
+      <view class="line"> </view> -->
+      <!--身份证号  -->
+      <view class="base_info_view">
+        <text class="info_text">身份证号:</text>
+        <input class="input_max" placeholder="请输入" bindinput="IdCardInput" />
+      </view>
+      <!--细线  -->
+      <view class="line"> </view>
+    </view>
+  </view>
+  <button class="register_btn" bindtap="btnRegister">开始认证</button>
+</scroll-view>

@@ -1,0 +1,9 @@
+<!--addArchives.wxml-->
+<view class="view">
+<view class="top_view"></view>
+      <textarea class="input_title" placeholder="请输入标题.." bindinput="TitleInput1" />
+            <textarea  class="input_content"   placeholder="请输入内容.." bindinput="ContentInput1" />
+
+  <button bindtap="btnSave" class="save_btn">发表</button>
+</view>
+           

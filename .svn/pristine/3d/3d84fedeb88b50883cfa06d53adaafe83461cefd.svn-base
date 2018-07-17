@@ -1,0 +1,132 @@
+// notice.js
+var app = getApp()
+var notice_list
+var id,name,content
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    key: '124666'
+  },
+  // 下载通知公告数据
+  NoticeListNet: function () {
+    var that = this
+    wx.request({
+      url: 'https://party.mtm2000.cn/party/mobile/mobileIn.do',
+      method: 'GET',
+      header: {
+        method: 'GET_NOTICE_LIST',
+      },
+      data: {
+        // type（0.公告  1.服务指南）
+        userId: app.globalData.user.id,
+        type: '0'
+      },
+      success: function (res) {
+        console.log("notice_res", res)
+        if (200 == res.statusCode) {
+          if (res.data.length >= 1) {
+            //更新数据
+            that.setData({
+              notice_list: res.data
+            })
+          } else {
+            that.setData({
+              notice_list: []
+            })
+          }
+        }
+      },
+    })
+  },
+  // 点击公告信息变为已读
+  ClickNoticeItemNet: function () {
+    var that = this
+    wx.request({
+      url: 'http://200.200.202.140:8080/party/mobile/mobileIn.do',
+      method: 'GET',
+      header: {
+        method: 'SAVE_NOTICE_VIEW',
+      },
+      data: {
+        // type（0.公告  1.服务指南）
+        userId: app.globalData.user.id,
+        type: '0',
+        noticId: id
+      },
+      success: function (res) {
+        console.log("notice_res", res)
+        if (200 == res.statusCode && '100' == res.data.success) {
+          app.noticeDetailId = id
+          wx.navigateTo({
+            url: 'noticeDetail/noticeDetail'
+          });
+        }
+      },
+    })
+  },
+  // 每条List点击事件
+  btnNoticeItem: function (e) {
+    var that = this
+    id = e.currentTarget.id;
+    that.ClickNoticeItemNet()
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var that = this
+    that.NoticeListNet()
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

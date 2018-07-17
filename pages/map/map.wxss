@@ -1,0 +1,106 @@
+/* pages/invitation/index.wxss */
+.container {
+  color: #643c1b;
+  height: 100%;
+  background: url('https://wx.qiaker.cn/img/bg_inv.jpg') no-repeat center;
+  background-size: cover;
+}
+.date {
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+.name {
+  width: 400rpx;
+  margin: 0 auto;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.fr{
+  margin-left: 90px;
+}
+.savethedate {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.savethedate image {
+  width: 200rpx;
+  height: 200rpx;
+}
+.diamond {
+  width: 400rpx;
+  height: 59rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.diamond image {
+  width: 400rpx;
+  height: 59rpx;
+}
+.address {
+  text-align: center;
+  padding: 20rpx; 
+  font-size: 34rpx;
+  line-height: 40rpx;
+}
+.s_icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  margin-top: 30rpx; 
+}
+
+.s_icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+.words {
+  width: 400rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.words image {
+  width: 400rpx;
+  height: 96rpx;
+}
+.tel {
+  width: 500rpx;
+  margin: 0 auto;
+  min-height: 0;
+  overflow: hidden;
+  text-align: center;
+  font-size: 20rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.tel_he {
+  width: 200rpx;
+  float: left;
+}
+.tel_she {
+  width: 200rpx;
+  float: right;
+}
+.call {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin: 0 auto; 
+}
+.call image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+

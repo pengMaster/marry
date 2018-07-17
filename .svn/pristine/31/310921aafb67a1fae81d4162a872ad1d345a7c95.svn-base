@@ -1,0 +1,52 @@
+var api = require('../../api/api.js')
+//获取应用实例
+var app = getApp()
+
+Page({
+  data: {
+    remind: '加载中',
+    help_status: false,
+    userid_focus: false,
+    passwd_focus: false,
+    userid: '',
+    passwd: '',
+    angle: 0
+  },
+  onLoad: function () {
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function (userInfo, openId) {
+      //更新数据
+      that.setData({
+        userInfo: userInfo,
+        openId: openId,
+        //图片地址
+        wave: api.splashWave,
+        loading: api.splashLoading
+      })
+    })
+  },
+  onReady: function () {
+    var _this = this;
+    setTimeout(function () {
+      _this.setData({
+        remind: ''
+      });
+    }, 1000);
+    wx.onAccelerometerChange(function (res) {
+      var angle = -(res.x * 30).toFixed(1);
+      if (angle > 14) { angle = 14; }
+      else if (angle < -14) { angle = -14; }
+      if (_this.data.angle !== angle) {
+        _this.setData({
+          angle: angle
+        });
+      }
+    });
+  }
+  
+})
+
+
+
+

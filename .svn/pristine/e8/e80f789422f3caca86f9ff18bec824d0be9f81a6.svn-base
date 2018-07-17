@@ -1,0 +1,23 @@
+<!--partyRecordQuery.wxml-->
+<view class="music">
+  <view class="music-container"  wx:for="{{list}}" wx:key="key"  wx:for-item="item" >
+    <view class="music-control">
+      <view>
+      <view class="base_info_view">
+          <text class="info_text">缴费日期：</text>
+          <text class="text_value">{{item.createTime}}</text>
+        </view>
+        <!--细线  -->
+        <view class="line"> </view>
+        <view class="base_info_view">
+          <text class="info_text">时间段：</text>
+          <text class="text_value">{{item.startTime}} 至 {{item.endTime}}</text>
+        </view>
+        <view class="base_info_view">
+          <text class="info_text">金额：</text>
+          <text class="text_value">{{item.sum}}元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

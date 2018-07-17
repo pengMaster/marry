@@ -1,0 +1,44 @@
+<!--pages/bless/index.wxml-->
+<view class="container">
+
+  <view class="title" wx:if="{{zanLog.length > 0}}">已收到 {{zanLog.length}} 位好友的祝福</view>
+  <view class="title" wx:if="{{zanLog.length == 0}}"> 点击下方按钮可送上祝福 </view>
+
+  <view class="friends">
+    <view bindtap='loadMoreFriends' class="face" wx:for="{{zanLog}}" wx:key="user"><image src="{{item[3]}}" /></view>
+  </view>
+  <view class="btn_zone">
+    <view class="zan fl">
+      <button type="primary" bindtap='zan'>送上祝福</button>  
+    </view>
+    <view class="share fr">
+      <button type="default" open-type="share">分享</button>  
+    </view>
+  </view>
+
+   <view wx:if="{{chatList.length > 0}}">
+        <view class="chat_list"wx:for="{{chatList}}" wx:key="user">
+            <view class="chat_face">
+                <image src="{{item[2]}}" />
+            </view>
+            <view class="chat_words">
+                <view class="chat_meta">
+                    <text class="chat_user">{{item[1]}}</text>
+                    <text class="chat_date">{{item[4]}}</text>
+                </view>
+                <view>{{item[3]}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="befirst">
+            <image src="/image/lovemail.gif"/>
+        </view>
+    </view>
+    <view class="send_msg">
+        <form bindreset="foo">
+            <input placeholder="在这里输入您要说的话" class="send_ipt" bindinput="bindKeyInput"/>
+            <button type="primary" form-type="reset" class="send_btn">发布</button>
+        </form>   
+    </view>
+</view>

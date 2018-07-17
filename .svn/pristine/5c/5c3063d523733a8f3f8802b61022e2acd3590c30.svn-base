@@ -1,0 +1,22 @@
+<scroll-view class="music" scroll-y="true">
+
+  <view class="music-container" wx:for="{{notice_list}}" wx:for-index="key" wx:for-item="value" bindtap="btnNoticeItem" 
+  id = "{{value.id}}">
+    <view class="music-control">
+      <!--知识库  -->
+      <view class="knowledge_base_top" >
+        <text class="knowledge_base_title">{{value.title}}</text>
+        <view class="knowledge_base_more">
+          <text>更多>></text>
+        </view>
+      </view>
+      <!--细线  -->
+      <view class="line"> </view>
+      <view>
+        <!--讲话内容  -->
+        <text class="knowledge_base_content">{{value.content}}</text>
+      </view>
+    </view>
+  </view>
+  <image bindtap="btnAdd1" class="v-img" src="../../image/add_img.png"></image>
+</scroll-view>

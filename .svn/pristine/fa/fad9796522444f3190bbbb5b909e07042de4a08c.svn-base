@@ -1,0 +1,24 @@
+    <scroll-view class="music" scroll-y="true">
+      <view class="music-container" wx:for="{{praise_list}}" wx:for-index="key" wx:for-item="value"  id="{{value.id}}">
+        <view class="music-control">
+          <!--知识库  -->
+          <view class="knowledge_base_top">
+            文章:{{value.title}}
+          </view>
+          <!--细线  -->
+          <view class="line"> </view>
+          <!--评论人信息  -->
+          <view class="comment_user_info">
+            <image class="comment_user_avater" src="../../../../image/avater_img.png"></image>
+            <!--名字和日期  -->
+            <view>
+              <view class="view_feel">
+                <view class="comment_user_name">{{value.userName}}</view>
+              </view>
+              <view class="comment_user_date">{{value.createTime}}</view>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>

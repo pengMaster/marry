@@ -1,0 +1,20 @@
+<!--pages/bless/index.wxml-->
+<view class="container">
+  <view class="bless_img">
+    <image src="/image/mail.png"/>
+  </view>
+  <view class="title" wx:if="{{zanLog.length > 0}}">已收到 {{zanLog.length}} 位好友的祝福</view>
+  <view class="title" wx:if="{{zanLog.length == 0}}"> 点击下方按钮可送上祝福 </view>
+
+  <view class="friends">
+    <view bindtap='loadMoreFriends' class="face" wx:for="{{zanLog}}" wx:key="user"><image src="{{item[3]}}" /></view>
+  </view>
+  <view class="btn_zone">
+    <view class="zan fl">
+      <button type="primary" bindtap='zan'>送上祝福</button>  
+    </view>
+    <view class="share fr">
+      <button type="default" open-type="share">分享</button>  
+    </view>
+  </view>
+</view>

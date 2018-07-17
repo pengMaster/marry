@@ -1,0 +1,232 @@
+// payPartyCost.js
+var app = getApp()
+var month = 1
+var startTime
+var orderNo
+var startFlag=true
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    item: "-申请订单",
+    date: '',
+    dateStart: '2016-01-01',
+    dateEnd: '2019-01-01',
+    array: ['一个月', '两个月', '三个月', '四个月', '五个月', '半年', '七个月', '八个月', '九个月', '十个月', '十一个月', '一年'],
+    index: 0,
+    total_fee: 0
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this
+    console.log(that.dateStart)
+    that.date = that.getNowFormatDate()
+    startTime = app.globalData.user.endTime
+    that.total_fee = that.getSalarySum(app.globalData.user.salary, 1)
+    if(''!=startTime){
+      startFlag=fales
+    }
+    that.setData({
+      date: that.date,
+      total_fee: that.total_fee,
+      startFlag:startFlag
+    })
+  },
+
+  payIn: function () {
+    var that = this
+    that.item = "-已申请订单"
+    that.setData({
+      item: that.item
+    })
+    that.generateOrder(app.globalData.openId)
+    console.log('-openId: ', app.globalData.openId)
+  },
+
+  generateOrder: function (openid) {
+    var that = this
+    //统一支付
+    wx.request({
+      url: 'https://party.mtm2000.cn/party/mobile/mobileIn.do',
+      header: {
+        method: 'GET_PAY'
+      },
+      method: 'GET',
+      data: {
+        userId: app.globalData.user.id,
+        total: 0.01,
+        min: 0.01,
+        startTime: startTime,
+        month: month,
+        salary: app.globalData.user.salary,
+        payRuleId: app.globalData.user.payRuleId,
+        body: '支付信息'
+      },
+      success: function (res) {
+        console.log("订单信息" + res)
+        var pay = res.data
+        //发起支付
+        var timeStamp = pay.timeStamp;
+        console.log("timeStamp:" + timeStamp)
+        var packages = pay.package;
+        console.log("package:" + packages)
+        var paySign = pay.paySign;
+        console.log("paySign:" + paySign)
+        var nonceStr = pay.nonceStr;
+        console.log("nonceStr:" + nonceStr)
+        orderNo = pay.orderNo
+        console.log("orderNo:" + orderNo)
+        var param = { "timeStamp": timeStamp, "package": packages, "paySign": paySign, "signType": "MD5", "nonceStr": nonceStr };
+        that.pay(param)
+      },
+      fail:function (res){
+        wx.showToast({
+          title: '订单申请失败',
+          image: '../../../image/error.png',
+          duration: 2000
+        })
+      }
+    })
+  },
+  /* 支付   */
+  pay: function (param) {
+    var that = this
+    console.log("支付")
+    console.log(param)
+    wx.requestPayment({
+      timeStamp: param.timeStamp,
+      nonceStr: param.nonceStr,
+      package: param.package,
+      signType: param.signType,
+      paySign: param.paySign,
+      success: function (res) {
+        // success
+        console.log("支付")
+        console.log(res)
+        that.sendPaySuccessFlag()
+
+      },
+      fail: function (res) {
+        // fail
+        console.log("支付失败")
+        console.log(res)
+        wx.showToast({
+          title: '支付失败',
+          image: '../../../image/error.png',
+          duration: 2000
+        })
+      },
+      complete: function () {
+        // complete
+        console.log("pay complete")
+      }
+    })
+  },
+
+  sendPaySuccessFlag: function () {
+    wx.request({
+      url: 'https://party.mtm2000.cn/party/mobile/mobileIn.do',
+      data: {
+        orderNo: orderNo,
+        userId: app.globalData.user.id
+      },
+      header: {
+        method: 'SAVE_PAY'
+      },
+      method: 'GET',
+      success: function (res) {
+        // 支付成功跳转页面
+        wx.redirectTo({
+          url: '../payPartyCost/paySuccess/paySuccess'
+        });
+
+      },
+      fail: function (res) { },
+      complete: function (res) { }
+    })
+
+
+
+    // wx.navigateBack({
+    //   delta: 1, // 回退前 delta(默认为1) 页面
+    //   success: function (res) {
+    //     wx.showToast({
+    //       title: '支付成功',
+    //       icon: 'success',
+    //       duration: 2000
+    //     })
+    //   },
+    //   fail: function () {
+    //     // fail
+    //   },
+    //   complete: function () {
+    //     // complete
+    //   }
+    // })
+
+  },
+
+
+  bindPickerChange: function (e) {
+    var that = this
+    month = e.detail.value * 1 + 1
+    console.log('picker发送选择改变，携带值为', e.detail.value + ',' + month)
+    that.total_fee = that.getSalarySum(app.globalData.user.salary, month)
+    this.setData({
+      total_fee: that.total_fee,
+      index: e.detail.value
+    })
+  },
+  bindDateChange: function (e) {
+    startTime = e.detail.value
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  getNowFormatDate: function () {
+    var date = new Date()
+    var seperator1 = "-"
+    var seperator2 = ":"
+    var month = date.getMonth() + 1
+    var strDate = date.getDate()
+    if (month >= 1 && month <= 9) {
+      month = "0" + month
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+    return currentdate
+  },
+
+  getSalarySum: function (salary, months) {
+    var sum = 0;
+    console.log("getSalarySum,1" + "salary" + salary + ",months" + months)
+    if (salary <= 3000) {
+      sum = salary * 0.005 * months
+    } else if (salary > 3000 && salary <= 5000) {
+      sum = salary * 0.01 * months
+
+    } else if (salary > 5000 && salary <= 10000) {
+      sum = salary * 0.015 * months
+
+    } else if (salary > 10000) {
+      sum = salary * 0.02 * months
+    }
+    console.log("getSalarySum,2" + "=" + sum)
+    return sum
+
+  },
+  btnRule: function () {
+    app.noticeDetailId = 'rule'
+    wx.navigateTo({
+      url: '../notice/noticeDetail/noticeDetail'
+    })
+  },
+
+})
