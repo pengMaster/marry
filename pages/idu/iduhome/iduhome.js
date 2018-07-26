@@ -1,17 +1,11 @@
-// pages/my/aboutus/aboutus.js
-var api = require('../../../api/api.js')
-var imgUrlPs = [
-  'https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png',
-  'https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png',
-  'https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png'
-]
+// pages/idu/iduhome/iduhome.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
- 
+  
   },
 
   /**
@@ -20,25 +14,24 @@ Page({
   onLoad: function (options) {
   
   },
-  previewImage: function (e) {
-    var current = e.target.dataset.src;
-    wx.previewImage({
-      current: current, // 当前显示图片的http链接
-      urls: imgUrlPs // 需要预览的图片http链接列表
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
   
   },
+  click: function () {
+    wx.navigateTo({
+      url: '../iduquestion/iduquestion'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**

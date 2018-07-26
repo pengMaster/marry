@@ -3,9 +3,9 @@ var api = require('../../../api/api.js')
 var app = getApp()
 var id = ''
 var imgUrlPs = [
-  'https://pengmaster.com/party/wechat/marry/1531296916221/1531296915822.jpg',
-  'https://pengmaster.com/party/wechat/marry/1531296916221/1531296915822.jpg',
-  'https://pengmaster.com/party/wechat/marry/1531296916221/1531296916221.jpg'
+  'https://pengmaster.com/party/wechat/marry/banner/烈焰夏日.jpg',
+  'https://pengmaster.com/party/wechat/marry/banner/1531296916221.jpg',
+  'https://pengmaster.com/party/wechat/marry/banner/1531296916278.jpg'
 ]
 
 
@@ -15,7 +15,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imgUrls: [
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/烈焰夏日.jpg',
+        type: '烈焰夏日'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916221.jpg',
+        type: '1531296916221'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916278.jpg',
+        type: '1531296916278'
+      }
+    ]
   },
 
   /**
@@ -24,7 +37,7 @@ Page({
   onLoad: function (options) {
     var that = this
     id = options.id
-    that.getImageList()
+    //that.getImageList()
   },
 
   /**

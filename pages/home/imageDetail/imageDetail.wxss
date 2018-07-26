@@ -1,12 +1,29 @@
 /* pages/home/imageDetail/imageDetail.wxss */
 .el-bgimg {
   width: 100%;
+ animation: move 5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move{
+  from{
+    scale :0.5;
+    opacity: 0;
+   
+    
+  }
+  to{
+    scale :1;
+    opacity: 1;
+  }
+
 }
 .horizontal{
      display: flex; 
      width: 90%;
      margin: 20px;
-     text-align: center
+     text-align: center;
 }
 .horizontal_image{
      display: flex; 
@@ -14,7 +31,10 @@
      margin: 20px;
 }
 .image_margin_10{
-     margin: 10px
+    margin: 10px;
+    animation: move 5s;
+    opacity: 0;
+    animation-fill-mode: forwards
 }
 .vertical_center{
   height: 300px;

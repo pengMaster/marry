@@ -1,6 +1,6 @@
 /* pages/my/aboutus/aboutus.wxss */
-.content{
-  padding: 10px;
+page{
+  overflow: hidden
 }
 .text_style{
   font-size: 12px;
@@ -11,4 +11,22 @@
     margin-top: 10px;
     height: 2rpx;
     background-color: gainsboro;
+}
+.view_bg{
+  height: 100%;
+  background: url('https://pengmaster.com/party/wechat/marry/background/bg_fation_gril.jpg') no-repeat center;
+  background-size: 100% 100%;
+}
+.qr_style{
+  width: 160px;
+  height: 200px;
+  margin-top: 20px;
+}
+.text_view_style{
+  left: 20px;
+  top: 180px;
+  position: absolute;
+}
+.text_style{
+  font-size: 12px;
 }

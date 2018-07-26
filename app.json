@@ -1,16 +1,21 @@
 {
   "pages": [
+    "pages/home/gridview/gridview",
     "pages/splash/splash",
-    "pages/my/my",
     "pages/my/aboutus/aboutus",
+    "pages/map/map",
+    "pages/home/imageDetail/imageDetail",  
+    "pages/idu/iduhome/iduhome",
+    "pages/idu/iduquestion/iduquestion",
+    "pages/home/animal/animal",
+    "pages/my/my",
     "pages/bless/bless",
     "pages/bless/chat/chat",
-    "pages/map/map",
-    "pages/home/imageDetail/imageDetail",
     "pages/home/pagerImage/pagerImage",
     "pages/home/home",
     "pages/bless/blessDetail/blessDetail",
-    "pages/my/aboutProject/aboutProject"
+    "pages/my/aboutProject/aboutProject",
+    "pages/idu/idudaan/idudaan"
   ],
   "window": {
     "backgroundTextStyle": "light",

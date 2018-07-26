@@ -1,0 +1,2 @@
+<!--pages/home/animal/animal.wxml-->
+<image class='image_style' src='https://pengmaster.com/party/wechat/marry/1531296916221/1531296915822.jpg' animation="{{animationData}}"></image>  

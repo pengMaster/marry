@@ -2,7 +2,7 @@
 .container {
   color: #643c1b;
   height: 100%;
-  background: url('https://wx.qiaker.cn/img/bg_inv.jpg') no-repeat center;
+  background: url('https://pengmaster.com/party/wechat/image/background/bg_marry.jpg') no-repeat center;
   background-size: cover;
 }
 .date {

@@ -1,21 +1,15 @@
 <!--pages/my/aboutus/aboutus.wxml-->
-<view class='content'>
+<view class='view_bg'>
 
-  <view class='text_style' >1.项目地址：https://github.com/pengMaster/marry</view>  
-  <view class="line"> </view>
+    <view class='text_view_style'>
 
-  <view class='text_style' >2.服务器：阿里云服务</view>  
-  <view class="line"> </view>
+      <image bindtap="previewImage" class='qr_style' src='https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png'></image>
 
-  <view class='text_style' >3.域名：pengmaster.com</view>  
-  <view class="line"> </view>
+      <view class='text_style'>QQ群号：830556582</view>
 
-    <view class='text_style'>4.本人为安卓开发，因婚期将至，业余写了个小程序，不足之处，多多指教</view>  
-  <view class="line"> </view>
+      <view class='text_style'>QQ邮箱：946549990@qq.com</view>
+      
+    </view>
 
-  <view class='text_style' >5.项目中引用网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片资源禁止传播</view>  
-  <view class="line"> </view>
-
-   <image data-src="../../../image/group_qr_code.png" bindtap="previewImage" src="../../../image/group_qr_code.png"></image> 
 </view>
 

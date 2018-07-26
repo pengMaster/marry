@@ -5,16 +5,30 @@ var appid = 'wxade372ce7f2da061';
 Page({
   data: {
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+              {
+              imgUrl: 'https://pengmaster.com/party/wechat/marry/tai_miao/HY2A0764.jpg',
+               type:'太庙'
+            },
+              {
+                imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916221.jpg',
+                type: '1531296916221'
+              },
+              {
+                imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916278.jpg',
+                type: '1531296916278'
+            },
+            {
+                imgUrl: 'https://pengmaster.com/party/wechat/marry/lyxz/HY2A0868.jpg',
+                type: '绿野仙踪'
+           }
+      
     ],
     indicatorDots: true,
     autoplay: true,
     interval: 2600,
     duration: 1200,
     //item_image
-  item_one_image:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+    item_one_image:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
     userInfo: {},
     isPlayingMusic: false  
   },
@@ -49,7 +63,7 @@ Page({
    */
   onShow: function () {
     var that = this
-    that.getImageList()
+    //that.getImageList()
     
   },
   // 每条List点击事件
@@ -126,7 +140,7 @@ Page({
             console.log(res.data)
             //更新数据
             that.setData({
-              imgUrls: res.data
+              // imgUrls: res.data
             })
           } 
         }

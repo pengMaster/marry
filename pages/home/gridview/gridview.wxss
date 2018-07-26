@@ -1,0 +1,56 @@
+/* pages/home/gridview/gridview.wxss */
+.view_bg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  /*background: url('https://pengmaster.com/party/wechat/marry/background/fenhong.jpg') no-repeat center; */
+}
+
+.img {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image_style {
+  width: 95%;
+  margin: 0, auto;
+  animation: move 5s;
+  opacity: 0;
+  display: block;
+  animation-fill-mode: forwards;
+  background-size: cover;
+}
+
+@keyframes move {
+  from {
+    scale: 0.5;
+    opacity: 0;
+  }
+
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.text_style {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/*细线 */
+
+.line {
+  margin-top: 10px;
+  height: 2rpx;
+  background-color: gainsboro;
+}

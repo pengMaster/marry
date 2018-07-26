@@ -1,0 +1,6 @@
+/* pages/home/animal/animal.wxss */
+.image_style{
+  width: 80px;
+  height: 80px;
+  margin: 50px;
+}
