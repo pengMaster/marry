@@ -5,7 +5,7 @@
   <view wx:for="{{imgUrls}}" wx:key="{{index}}">
 
     <view class="img">
-      <image mode="scaleToFill" class='image_style' src='{{item.imgUrl}}'></image>
+      <image bindtap="previewImage" data-src="{{item.imgUrl}}" mode="aspectFill" class='image_style' src='{{item.imgUrl}}'></image>
     </view>
 
     <view class='text'>

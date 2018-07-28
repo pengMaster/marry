@@ -1,2 +1,0 @@
-<!--pages/idu/idudaan/idudaan.wxml-->
-<image class='image' src='../../../image/ic_daan.jpg' bindtap='click'></image>

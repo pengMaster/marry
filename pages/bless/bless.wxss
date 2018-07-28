@@ -171,3 +171,9 @@ page {
     width: 600rpx;
     height: 450rpx;
 }
+.text {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

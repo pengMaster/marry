@@ -1,6 +1,8 @@
 // pages/bless/index.js
 var api = require('../../../api/api.js')
 const app = getApp()
+var server = 'https://wx.qiaker.cn/api';
+var appid = 'wxade372ce7f2da061';
 Page({
 
   /**
@@ -24,9 +26,26 @@ Page({
         })
       }
     }),
-      that.getPraiseList(),
+      // that.getPraiseList(),
 
-      that.getCommentList()
+      // that.getCommentList()
+      wx.request({
+        url: server,
+        method: 'GET',
+        data: { 'c': 'info', 'appid': appid },
+        header: {
+          'Accept': 'application/json'
+        },
+        success: function (res) {
+          console.log(res.data)
+          that.setData({
+            mainInfo: res.data.mainInfo,
+            zanLog: res.data.zanLog,
+            zanNum: res.data.zanNum,
+            slideList: res.data.slideList
+          });
+        }
+      })
   },
 
   /**
@@ -126,9 +145,9 @@ Page({
     var that = this;
     //console.log(that.data);
     return {
-      title: that.data.mainInfo.share,
-      imageUrl: that.data.mainInfo.thumb,
-      path: 'pages/index/index',
+      title: '诚意邀请你参加我们的婚礼',
+      imageUrl: 'https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1167.jpg',
+      path: "pages/home/home",
       success: function (res) {
         wx.showToast({
           title: '分享成功',

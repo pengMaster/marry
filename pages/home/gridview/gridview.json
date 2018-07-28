@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "太庙",
+  "navigationBarTitleText": "点击看大图",
   "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#fe5300",
   "navigationBarTextStyle": "white",
   "enablePullDownRefresh": false
 }

@@ -10,7 +10,8 @@ Page({
    */
   data: {
     userInfo: {},
-    inputValue: ''
+    inputValue: '',
+    zanNum: 0
   },
 
   /**
@@ -26,46 +27,43 @@ Page({
         })
       }
     }),
-    that.getPraiseList(),
+    // that.getPraiseList(),
     
-    that.getCommentList()
+    // that.getCommentList()
 
-      // wx.request({
-      //   url: server,
-      //   method: 'GET',
-      //   data: { 'c': 'info', 'appid': appid },
-      //   header: {
-      //     'Accept': 'application/json'
-      //   },
-      //   success: function (res) {
-      //     console.log(res.data)
-      //     var list = res.data.chatList;
-      //     for (var i = 0; i < 40;i++){
-      //       var time = list[i].time;
-      //       var nickname = list[i].nickname;
-      //       var face = list[i].face;
-      //       var words = list[i].words;
-      //       wx.request({
-      //         url: api.mobileIn,
-      //         data: { 'nickName': nickname, 'nickImage': face, 'comment': words, 'time': time },
-      //         header: { method: 'SAVE_COMMENT' },
-      //         method: "GET",
-      //         dataType: "json",
-      //         success: res => {
-      //           // if (200 == res.statusCode) {
-      //           //   console.log(res.data)
-      //           //   that.getCommentList()
-      //           //   wx.showModal({
-      //           //     title: '提示',
-      //           //     content: res.data,
-      //           //     showCancel: false
-      //           //   })
-      //           // }
-      //         }
-      //       })
-      //     }
-      //   }
-      // })
+      wx.request({
+        url: server,
+        method: 'GET',
+        data: { 'c': 'info', 'appid': appid },
+        header: {
+          'Accept': 'application/json'
+        },
+        success: function (res) {
+          console.log(res.data)
+          that.setData({
+            mainInfo: res.data.mainInfo,
+            zanLog: res.data.zanLog,
+            zanNum: res.data.zanNum,
+            slideList: res.data.slideList
+          });
+        }
+      }),
+      wx.request({
+        url: server,
+        method: 'GET',
+        data: { 'c': 'info', 'appid': appid },
+        header: {
+          'Accept': 'application/json'
+        },
+        success: function (res) {
+          console.log(res.data)
+          that.setData({
+            mainInfo: res.data.mainInfo,
+            chatList: res.data.chatList,
+            chatNum: res.data.chatNum
+          });
+        }
+      })
     
   },
 
@@ -181,9 +179,9 @@ Page({
     var that = this;
     //console.log(that.data);
     return {
-      title: that.data.mainInfo.share,
-      imageUrl: that.data.mainInfo.thumb,
-      path: 'pages/index/index',
+      title: '诚意邀请你参加我们的婚礼',
+      imageUrl: 'https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1167.jpg',
+      path: "pages/home/home",
       success: function (res) {
         wx.showToast({
           title: '分享成功',
@@ -197,27 +195,62 @@ Page({
       }
     }
   },
+  // zan: function (event) {
+  //   var that = this;
+
+  //   var userInfo = that.data.userInfo;
+  //   console.log(userInfo)
+  //   var name = userInfo.nickName;
+  //   var face = userInfo.avatarUrl;
+
+  //   wx.request({
+  //     url: api.mobileIn,
+  //     data: { 'nickName': name, 'nickImage': face, 'openId': app.globalData.openId },
+  //     header: { method: 'SAVE_PRAISE'},
+  //     method: "GET",
+  //     dataType: "json",
+  //     success: res => {
+  //       if (200 == res.statusCode) {
+  //         console.log(res.data)
+  //         that.getPraiseList()
+  //         wx.showModal({
+  //           title: '提示',
+  //           content: res.data,
+  //           showCancel: false
+  //         })
+  //       }
+  //     }
+  //   })
+  // },
   zan: function (event) {
     var that = this;
 
     var userInfo = that.data.userInfo;
-    console.log(userInfo)
     var name = userInfo.nickName;
     var face = userInfo.avatarUrl;
-
     wx.request({
-      url: api.mobileIn,
-      data: { 'nickName': name, 'nickImage': face, 'openId': app.globalData.openId },
-      header: { method: 'SAVE_PRAISE'},
+      url: server,
+      data: { 'c': 'zan', 'appid': appid, 'nickname': name, 'face': face },
+      header: {},
       method: "GET",
       dataType: "json",
       success: res => {
-        if (200 == res.statusCode) {
-          console.log(res.data)
-          that.getPraiseList()
+        // console.log(res.data);
+        if (res.data.success) {
+
+          that.setData({
+            zanLog: res.data.zanLog,
+            zanNum: res.data.zanNum
+          });
           wx.showModal({
             title: '提示',
-            content: res.data,
+            content: res.data.msg,
+            showCancel: false
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
             showCancel: false
           })
         }
@@ -234,18 +267,27 @@ Page({
       var face = userInfo.avatarUrl;
       var words = that.data.inputValue;
       wx.request({
-        url: api.mobileIn,
-        data: { 'nickName': name, 'nickImage': face, 'comment': words,'openId': app.globalData.openId  },
-        header: { method: 'SAVE_COMMENT' },
+        url: server,
+        data: { 'c': 'send', 'appid': appid, 'nickname': name, 'face': face, 'words': words },
+        header: {},
         method: "GET",
         dataType: "json",
         success: res => {
-          if (200 == res.statusCode) {
-            console.log(res.data)
-            that.getCommentList()
+          // console.log(res.data);
+          if (res.data.success) {
+            that.setData({
+              chatList: res.data.chatList,
+              chatNum: res.data.chatNum
+            });
             wx.showModal({
               title: '提示',
-              content: res.data,
+              content: res.data.msg,
+              showCancel: false
+            })
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: res.data.msg,
               showCancel: false
             })
           }
@@ -264,4 +306,44 @@ Page({
     });
     return;
   }
+  // foo: function () {
+  //   var that = this;
+  //   if (that.data.inputValue) {
+  //     //留言内容不是空值
+
+  //     var userInfo = that.data.userInfo;
+  //     var name = userInfo.nickName;
+  //     var face = userInfo.avatarUrl;
+  //     var words = that.data.inputValue;
+  //     wx.request({
+  //       url: api.mobileIn,
+  //       data: { 'nickName': name, 'nickImage': face, 'comment': words,'openId': app.globalData.openId  },
+  //       header: { method: 'SAVE_COMMENT' },
+  //       method: "GET",
+  //       dataType: "json",
+  //       success: res => {
+  //         if (200 == res.statusCode) {
+  //           console.log(res.data)
+  //           that.getCommentList()
+  //           wx.showModal({
+  //             title: '提示',
+  //             content: res.data,
+  //             showCancel: false
+  //           })
+  //         }
+  //       }
+  //     })
+  //   } else {
+  //     //Catch Error
+  //     wx.showModal({
+  //       title: '提示',
+  //       content: '您还没有填写内容',
+  //       showCancel: false
+  //     })
+  //   }
+  //   that.setData({
+  //     inputValue: ''//将data的inputValue清空
+  //   });
+  //   return;
+  // }
 })

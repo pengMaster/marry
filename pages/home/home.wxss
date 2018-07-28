@@ -868,15 +868,15 @@ page{
   width: 100rpx;
 }
 .musicImg{
-  width: 80rpx;
-  height: 80rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .music_icon{
   animation:musicRotate 3s linear infinite;
 }
 .music_play{
   width:28rpx;
-  height: 80rpx;
+  height: 60rpx;
   margin-left:-5px;
   transform-origin: top;
   -webkit-transform:rotate(20deg)

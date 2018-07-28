@@ -94,9 +94,9 @@ Page({
     var that = this;
     //console.log(that.data);
     return {
-      title: that.data.mainInfo.share,
-      imageUrl: that.data.mainInfo.thumb,
-      path: 'pages/index/index',
+      title: '诚意邀请你参加我们的婚礼',
+      imageUrl: 'https://pengmaster.com/party/wechat/marry/tai_miao/HY2A0764.jpg',
+      path: "pages/home/home",
       success: function (res) {
         wx.showToast({
           title: '分享成功',

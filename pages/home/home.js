@@ -4,45 +4,68 @@ var server = 'https://wx.qiaker.cn/api';
 var appid = 'wxade372ce7f2da061';
 Page({
   data: {
-    imgUrls: [
-              {
-              imgUrl: 'https://pengmaster.com/party/wechat/marry/tai_miao/HY2A0764.jpg',
-               type:'太庙'
-            },
-              {
-                imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916221.jpg',
-                type: '1531296916221'
-              },
-              {
-                imgUrl: 'https://pengmaster.com/party/wechat/marry/banner/1531296916278.jpg',
-                type: '1531296916278'
-            },
-            {
-                imgUrl: 'https://pengmaster.com/party/wechat/marry/lyxz/HY2A0868.jpg',
-                type: '绿野仙踪'
-           }
-      
+    imgUrls: [{
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/tai_miao_zip/HY2A0764.jpg',
+        type: '别致角楼'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1165.jpg',
+        type: '欧洲风情'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/fhjr_zip/HY2A1065.jpg',
+        type: '粉红佳人'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/dqdy_zip/HY2A1159.jpg',
+        type: '大气典雅'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg',
+        type: '狗娃特写'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/zgf_zip/HY2A1049.jpg',
+        type: '中国风'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/jbytj_zip/HY2A1214.jpg',
+        type: '酒吧一条街'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/huahai_zip/HY2A0893.jpg',
+        type: '绿叶红花'
+      },
+      {
+        imgUrl: 'https://pengmaster.com/party/wechat/marry/lyxz_zip/HY2A0868.jpg',
+        type: '绿野仙踪'
+      }
+
+
     ],
     indicatorDots: true,
     autoplay: true,
     interval: 2600,
     duration: 1200,
     //item_image
-    item_one_image:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+    item_one_image: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
     userInfo: {},
-    isPlayingMusic: false  
+    isPlayingMusic: true
   },
   //生命周期函数--监听页面加载
-  onLoad: function () {
+  onLoad: function() {
     var that = this
     wx.request({
       url: server,
       method: 'GET',
-      data: { 'c': 'info', 'appid': appid },
+      data: {
+        'c': 'info',
+        'appid': appid
+      },
       header: {
         'Accept': 'application/json'
       },
-      success: function (res) {
+      success: function(res) {
         // console.log(res.data)
         wx.playBackgroundAudio({
           dataUrl: res.data.music_url,
@@ -61,67 +84,67 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     var that = this
     //that.getImageList()
-    
+
   },
   // 每条List点击事件
-  jump: function (e) {
+  jump: function(e) {
     let id = e.currentTarget.dataset.id
     console.debug(id)
-    console.log("id:",id)
+    console.log("id:", id)
     wx.navigateTo({
-      url: 'imageDetail/imageDetail?id=' + id,
+      url: 'gridview/gridview?id=' + id,
     })
   },
-  
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
-  
+
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
   // 获取图片
-  getImageList: function () {
+  getImageList: function() {
     var that = this
     wx.request({
       url: api.mobileIn,
@@ -133,7 +156,7 @@ Page({
         homeType: 'banner'
 
       },
-      success: function (res) {
+      success: function(res) {
         wx.hideToast()
         if (200 == res.statusCode) {
           if (res.data.length >= 1) {
@@ -142,12 +165,12 @@ Page({
             that.setData({
               // imgUrls: res.data
             })
-          } 
+          }
         }
       },
     })
   },
-  play: function (event) {
+  play: function(event) {
     if (this.data.isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({

@@ -1,3 +1,0 @@
-<!--pages/idu/iduhome/iduhome.wxml-->
-
-  <image class='image' src='../../../image/ic_home.jpg' bindtap='click'></image>

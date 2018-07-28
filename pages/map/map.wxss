@@ -1,106 +1,133 @@
 /* pages/invitation/index.wxss */
+
 .container {
-  color: #643c1b;
-  height: 100%;
-  background: url('https://pengmaster.com/party/wechat/image/background/bg_marry.jpg') no-repeat center;
-  background-size: cover;
+    min-height: 100vh;
+}
+.cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 100vh;
+}
+.inv {
+    width: 572rpx;
+    height: 69rpx;
+    position: fixed;
+    top: 80rpx;
+    left: 89rpx;
+    z-index: 99
+}
+.datetime {
+    position: fixed;
+    bottom: 50rpx;
+    width: 620rpx;
+    padding: 15rpx;
+    left: 50rpx;
+    background-color: rgba(255, 255, 255, .8)
+}
+.box {
+    padding: 30rpx 0;
+    position: relative;
+    border: 4rpx solid rgba(0, 0, 0, .8);
+}
+.we {
+    position: absolute;
+    bottom: 0;
+    left: 40rpx;
+    width: 520rpx;
+    height: 14rpx;
 }
 .date {
-  text-align: center;
-  font-size: 30rpx;
-  line-height: 50rpx;
-  margin-top: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    margin-top: 20rpx;
 }
+
 .name {
-  width: 400rpx;
-  margin: 0 auto;
-  min-height: 0;
-  overflow: hidden;
-  margin-top: 20rpx;
-}
-.fr{
-  margin-left: 90px;
-}
-.savethedate {
-  width: 200rpx;
-  height: 200rpx;
-  margin: 0 auto;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-.savethedate image {
-  width: 200rpx;
-  height: 200rpx;
-}
-.diamond {
-  width: 400rpx;
-  height: 59rpx;
-  margin: 0 auto;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-.diamond image {
-  width: 400rpx;
-  height: 59rpx;
-}
-.address {
-  text-align: center;
-  padding: 20rpx; 
-  font-size: 34rpx;
-  line-height: 40rpx;
-}
-.s_icon {
-  width: 60rpx;
-  height: 60rpx;
-  margin: 0 auto;
-  margin-top: 30rpx; 
-}
-
-.s_icon image {
-  width: 60rpx;
-  height: 60rpx;
+    width: 400rpx;
+    margin: 0 auto;
+    min-height: 0;
+    overflow: hidden;
+    font-size: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
 }
 
 
-.words {
-  width: 400rpx;
-  height: 96rpx;
-  margin: 0 auto;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-.words image {
-  width: 400rpx;
-  height: 96rpx;
-}
 .tel {
-  width: 500rpx;
-  margin: 0 auto;
-  min-height: 0;
-  overflow: hidden;
-  text-align: center;
-  font-size: 20rpx;
-  line-height: 50rpx;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-.tel_he {
-  width: 200rpx;
-  float: left;
-}
-.tel_she {
-  width: 200rpx;
-  float: right;
-}
-.call {
-  width: 80rpx;
-  height: 80rpx;
-  display: block;
-  margin: 0 auto; 
-}
-.call image{
-  width: 80rpx;
-  height: 80rpx;
-  margin-bottom: 10rpx;
+    width: 500rpx;
+    margin: 0 auto;
+    min-height: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20rpx;
+    line-height: 50rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
 }
 
+.tel_he {
+    width: 200rpx;
+    float: left;
+}
+
+.tel_she {
+    width: 200rpx;
+    float: right;
+}
+
+.call {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.call image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.background_music{
+  position: fixed;
+  top: 20rpx;
+  right: 0;
+  z-index: 10001;
+  width: 100rpx;
+}
+.musicImg{
+  width: 60rpx;
+  height: 60rpx;
+}
+.music_icon{
+  animation:musicRotate 3s linear infinite;
+}
+.music_play{
+  width:28rpx;
+  height: 60rpx;
+  margin-left:-5px;
+  transform-origin: top;
+  -webkit-transform:rotate(20deg)
+}
+.playImg{
+  animation:musicStop 1s linear forwards ;
+}
+.pauseImg{
+  animation:musicStart 1s linear forwards ;
+}
+@-webkit-keyframes musicRotate{
+from{-webkit-transform:rotate(0deg);}
+to{-webkit-transform:rotate(360deg);}
+}
+@-webkit-keyframes musicStop{
+from{-webkit-transform:rotate(20deg);}
+to{-webkit-transform:rotate(0deg);}
+}
+@-webkit-keyframes musicStart{
+from{-webkit-transform:rotate(0deg);}
+to{-webkit-transform:rotate(20deg);}
+}
+.music_stop{width:4em;display:none;}

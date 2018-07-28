@@ -198,6 +198,12 @@
   position: relative;
   text-align: right;
 }
+/*基本信息view */
+.base_info_btn {
+  background: white;
+  height: 50px;
+}
+
 /*基本信息字样 */
 .base_info_text {
   color: #717171;
@@ -228,6 +234,12 @@
 .version_info_text {
   color: #717171;
   margin-top: 30rpx;
+  margin-left: 80rpx;
+  margin-bottom: 30rpx;
+}
+.version_info_text_btn {
+  color: #717171;
+  margin-top: 10rpx;
   margin-left: 80rpx;
   margin-bottom: 30rpx;
 }
@@ -327,7 +339,7 @@ page{
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(244,244,244,0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
 }
 .container {
-  background: #fe5300;
+  background: #CD96CD;
   align-items: stretch;
   padding: 0;
   height: 100%;

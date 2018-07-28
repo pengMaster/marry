@@ -112,6 +112,30 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var that = this;
+    //console.log(that.data);
+    return {
+      title: '诚意邀请你参加我们的婚礼',
+      imageUrl: 'https://pengmaster.com/party/wechat/marry/tai_miao/HY2A0764.jpg',
+      path: "pages/home/home",
+      success: function (res) {
+        wx.showToast({
+          title: '分享成功',
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '分享取消',
+        })
+      }
+    }
+  },
+  btnShareFriends: function () {
+    wx.showModal({
+      title: '提示',
+      content: "邮箱或者QQ反馈行吧？",
+      showCancel: false
+    })
   }
 })

@@ -1,7 +1,7 @@
 <view class="container">
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
-          <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+          <image class="logo" src="https://pengmaster.com/party/wechat/marry/gwtx/HY2A1088.jpg"></image>
           <image class="wave" src="{{wave}}" mode="aspectFill"></image>
           <image class="wave wave-bg" src="{{wave}}" mode="aspectFill"></image>
       </view>
@@ -48,7 +48,7 @@
       <view class="line"> </view>
       <!--分享好友  -->
       <view class="base_info_view" bindtap="btnShareFriends">
-        <text class="version_info_text">分享好友</text>
+        <text class="version_info_text">意见反馈</text>
         <view class="base_info_right">
           <image class="base_info_right_img" src="{{myArrowChart}}"></image>
         </view>
