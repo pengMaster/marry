@@ -6,7 +6,9 @@
 #### 效果图
    <img src="https://github.com/pengMaster/meteor/blob/master/doc/show1.png" width="150" height="250" align="left" alt=""/>
       <img src="https://github.com/pengMaster/meteor/blob/master/doc/show2.png" width="150" height="250" align="center" alt=""/>
-
+#### 主页面展示
+   <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142831.png" width="150" height="250" align="left" alt=""/>
+      <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142943.png" width="150" height="250" align="center" alt=""/>
 #### 软件架构
 软件架构说明
  - library依赖
