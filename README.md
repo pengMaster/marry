@@ -4,8 +4,7 @@
 婚礼邀请函
 
 #### 效果图
-   <img src="https://github.com/pengMaster/meteor/blob/master/doc/show1.png" width="150" height="250" align="left" alt=""/>
-      <img src="https://github.com/pengMaster/meteor/blob/master/doc/show2.png" width="150" height="250" align="center" alt=""/>
+
 #### 主页面展示
 <div align="center">
     <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142831.png" width="150" height="250"  alt=""/>
@@ -14,11 +13,9 @@
 </div>
   
 <div align="center">
-    <img src="https://github.com/pengMaster/meteor/blob/master/doc/show1.png" width="150" height="250" align="left" alt=""/>
-      <img src="https://github.com/pengMaster/meteor/blob/master/doc/show2.png" width="150" height="250" align="center" alt=""/>
-   <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142831.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142943.png" width="150" height="250"  alt=""/>
- <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-142956.png" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143010.png" width="150" height="250" alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143022.png" width="150" height="250"  alt=""/>
+   <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
   
 #### 软件架构
