@@ -50,5 +50,5 @@
 
 #### github地址
 
-前端地址：https://github.com/pengMaster/marry
-后台地址：https://github.com/pengMaster/marry_server
+ - 前端地址：https://github.com/pengMaster/marry
+ - 后台地址：https://github.com/pengMaster/marry_server
