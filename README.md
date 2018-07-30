@@ -17,80 +17,29 @@
     <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143022.png" width="150" height="250"  alt=""/>
    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
+
+#### 项目说明
+ - 服务器：阿里云服务
+ - 域名：pengmaster.com
+ - 数据库：在服务器上装的mysql
+ - 后台地址：https://github.com/pengMaster/marry_server
+ - 项目中引用的网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片禁止传播。
+- 功能简介：
+    - 新郎新娘图片展示
+    - 婚礼现场导航
+    - 点赞祝福，分享好友
+    - 身份切换，制作属于自己的请柬
+
+
   
-#### 软件架构
-软件架构说明
- - library依赖
+#### 个人说明
+
+ - 本人安卓开发，因婚期将至业余也了个小程序，不足之处多多指教
+ - QQ群：830556582
+ - QQ邮箱：946549990@qq.com
 
 
-#### 安装教程
-1.Add it in your root build.gradle
 
-```java
-    allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-```
-    
-2.Add it in your App build.gradle
-
-```java
-    dependencies {
-        implementation 'com.github.pengMaster:meteor:v1.0.2'
-    }
-```
-
-#### 使用说明
-
-
-3.Attribute introduction
-
-- type :整体线束所处位置
-    - top:至于顶部，头朝下
-    - mid_left:至于左侧，头朝右
-    - mid_right:至于右侧，头朝左
-    - bottom:至于底部，头朝上
-- topLineCount :顶部线束数量
-- midLineCount :中部线束数量
-- bottomLineCount :底部线束数量
-- lineWidth :每条线束宽度
-- lineColor :每条线束颜色
-
-4.import your project
-```java
-    <com.lan.john.gradienttest.wiget.GradientPaintView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        app:lineWidth="3"
-        app:topLineCount="15"
-        app:midLineCount="20"
-        app:bottomLineCount="8"
-        app:type="top" />
-
-```
-
-5.edit count
-```java
-    /**
-     * 代码动态设置线束
-     *
-     * @param countTop 顶部线束数量
-     * @param countMid 中间线束数量
-     * @param countBottom 底部线束数量
-     */
-    public void setLineCount(int countTop,int countMid ,int countBottom){
-        lineCountTop = countTop;
-        lineCountMid = countMid;
-        lineCountBottom = countBottom;
-        //可在线程中刷新
-        postInvalidate();
-    }
-
-```
 #### 参与贡献
 
 1. Fork 本项目
@@ -101,4 +50,5 @@
 
 #### github地址
 
-1. https://github.com/pengMaster/meteor
+前端地址：https://github.com/pengMaster/marry
+后台地址：https://github.com/pengMaster/marry_server
