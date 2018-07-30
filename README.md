@@ -4,6 +4,9 @@
 婚礼邀请函
 
 #### 效果图
+<div>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/ezgif.com-video-to-gif.gif" width="150" height="250"  alt=""/>
+</div>
 
 #### 主页面展示
 <div >
