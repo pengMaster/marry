@@ -181,7 +181,7 @@ Page({
     return {
       title: '诚意邀请你参加我们的婚礼',
       imageUrl: 'https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1167.jpg',
-      path: "pages/home/home",
+      path: "pages/splash/splash",
       success: function (res) {
         wx.showToast({
           title: '分享成功',
