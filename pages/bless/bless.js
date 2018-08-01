@@ -27,43 +27,9 @@ Page({
         })
       }
     }),
-    // that.getPraiseList(),
+    that.getPraiseList(),
     
-    // that.getCommentList()
-
-      wx.request({
-        url: server,
-        method: 'GET',
-        data: { 'c': 'info', 'appid': appid },
-        header: {
-          'Accept': 'application/json'
-        },
-        success: function (res) {
-          console.log(res.data)
-          that.setData({
-            mainInfo: res.data.mainInfo,
-            zanLog: res.data.zanLog,
-            zanNum: res.data.zanNum,
-            slideList: res.data.slideList
-          });
-        }
-      }),
-      wx.request({
-        url: server,
-        method: 'GET',
-        data: { 'c': 'info', 'appid': appid },
-        header: {
-          'Accept': 'application/json'
-        },
-        success: function (res) {
-          console.log(res.data)
-          that.setData({
-            mainInfo: res.data.mainInfo,
-            chatList: res.data.chatList,
-            chatNum: res.data.chatNum
-          });
-        }
-      })
+    that.getCommentList()
     
   },
 
@@ -195,62 +161,27 @@ Page({
       }
     }
   },
-  // zan: function (event) {
-  //   var that = this;
-
-  //   var userInfo = that.data.userInfo;
-  //   console.log(userInfo)
-  //   var name = userInfo.nickName;
-  //   var face = userInfo.avatarUrl;
-
-  //   wx.request({
-  //     url: api.mobileIn,
-  //     data: { 'nickName': name, 'nickImage': face, 'openId': app.globalData.openId },
-  //     header: { method: 'SAVE_PRAISE'},
-  //     method: "GET",
-  //     dataType: "json",
-  //     success: res => {
-  //       if (200 == res.statusCode) {
-  //         console.log(res.data)
-  //         that.getPraiseList()
-  //         wx.showModal({
-  //           title: '提示',
-  //           content: res.data,
-  //           showCancel: false
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
   zan: function (event) {
     var that = this;
 
     var userInfo = that.data.userInfo;
+    console.log(userInfo)
     var name = userInfo.nickName;
     var face = userInfo.avatarUrl;
+
     wx.request({
-      url: server,
-      data: { 'c': 'zan', 'appid': appid, 'nickname': name, 'face': face },
-      header: {},
+      url: api.mobileIn,
+      data: { 'nickName': name, 'nickImage': face, 'openId': app.globalData.openId },
+      header: { method: 'SAVE_PRAISE'},
       method: "GET",
       dataType: "json",
       success: res => {
-        // console.log(res.data);
-        if (res.data.success) {
-
-          that.setData({
-            zanLog: res.data.zanLog,
-            zanNum: res.data.zanNum
-          });
+        if (200 == res.statusCode) {
+          console.log(res.data)
+          that.getPraiseList()
           wx.showModal({
             title: '提示',
-            content: res.data.msg,
-            showCancel: false
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: res.data.msg,
+            content: res.data,
             showCancel: false
           })
         }
@@ -267,27 +198,18 @@ Page({
       var face = userInfo.avatarUrl;
       var words = that.data.inputValue;
       wx.request({
-        url: server,
-        data: { 'c': 'send', 'appid': appid, 'nickname': name, 'face': face, 'words': words },
-        header: {},
+        url: api.mobileIn,
+        data: { 'nickName': name, 'nickImage': face, 'comment': words,'openId': app.globalData.openId  },
+        header: { method: 'SAVE_COMMENT' },
         method: "GET",
         dataType: "json",
         success: res => {
-          // console.log(res.data);
-          if (res.data.success) {
-            that.setData({
-              chatList: res.data.chatList,
-              chatNum: res.data.chatNum
-            });
+          if (200 == res.statusCode) {
+            console.log(res.data)
+            that.getCommentList()
             wx.showModal({
               title: '提示',
-              content: res.data.msg,
-              showCancel: false
-            })
-          } else {
-            wx.showModal({
-              title: '提示',
-              content: res.data.msg,
+              content: res.data,
               showCancel: false
             })
           }
@@ -306,44 +228,4 @@ Page({
     });
     return;
   }
-  // foo: function () {
-  //   var that = this;
-  //   if (that.data.inputValue) {
-  //     //留言内容不是空值
-
-  //     var userInfo = that.data.userInfo;
-  //     var name = userInfo.nickName;
-  //     var face = userInfo.avatarUrl;
-  //     var words = that.data.inputValue;
-  //     wx.request({
-  //       url: api.mobileIn,
-  //       data: { 'nickName': name, 'nickImage': face, 'comment': words,'openId': app.globalData.openId  },
-  //       header: { method: 'SAVE_COMMENT' },
-  //       method: "GET",
-  //       dataType: "json",
-  //       success: res => {
-  //         if (200 == res.statusCode) {
-  //           console.log(res.data)
-  //           that.getCommentList()
-  //           wx.showModal({
-  //             title: '提示',
-  //             content: res.data,
-  //             showCancel: false
-  //           })
-  //         }
-  //       }
-  //     })
-  //   } else {
-  //     //Catch Error
-  //     wx.showModal({
-  //       title: '提示',
-  //       content: '您还没有填写内容',
-  //       showCancel: false
-  //     })
-  //   }
-  //   that.setData({
-  //     inputValue: ''//将data的inputValue清空
-  //   });
-  //   return;
-  // }
 })

@@ -26,26 +26,10 @@ Page({
         })
       }
     }),
-      // that.getPraiseList(),
+      that.getPraiseList(),
 
-      // that.getCommentList()
-      wx.request({
-        url: server,
-        method: 'GET',
-        data: { 'c': 'info', 'appid': appid },
-        header: {
-          'Accept': 'application/json'
-        },
-        success: function (res) {
-          console.log(res.data)
-          that.setData({
-            mainInfo: res.data.mainInfo,
-            zanLog: res.data.zanLog,
-            zanNum: res.data.zanNum,
-            slideList: res.data.slideList
-          });
-        }
-      })
+      that.getCommentList()
+    
   },
 
   /**
