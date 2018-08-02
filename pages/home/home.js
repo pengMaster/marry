@@ -1,7 +1,6 @@
 var api = require('../../api/api.js')
 var app = getApp()
-var server = 'https://wx.qiaker.cn/api';
-var appid = 'wxade372ce7f2da061';
+
 Page({
   data: {
     imgUrls: [{
@@ -50,35 +49,16 @@ Page({
     //item_image
     item_one_image: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
     userInfo: {},
-    isPlayingMusic: true
+    isPlayingMusic: true,
+    music_url: "http://dl.stream.qqmusic.qq.com/C100000gSW7F2IKT1w.m4a?fromtag=46"
   },
   //生命周期函数--监听页面加载
   onLoad: function() {
     var that = this
-    wx.request({
-      url: server,
-      method: 'GET',
-      data: {
-        'c': 'info',
-        'appid': appid
-      },
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function(res) {
-        // console.log(res.data)
-        wx.playBackgroundAudio({
-          dataUrl: res.data.music_url,
-          title: '',
-          coverImgUrl: ''
-        })
-
-        that.setData({
-          mainInfo: res.data.mainInfo,
-          slideList: res.data.slideList,
-          music_url: res.data.music_url
-        });
-      }
+    wx.playBackgroundAudio({
+      dataUrl: "http://dl.stream.qqmusic.qq.com/C100000gSW7F2IKT1w.m4a?fromtag=46",
+      title: '',
+      coverImgUrl: ''
     })
   },
   /**

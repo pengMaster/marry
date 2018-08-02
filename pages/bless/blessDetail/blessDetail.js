@@ -1,8 +1,7 @@
 // pages/bless/index.js
 var api = require('../../../api/api.js')
 const app = getApp()
-var server = 'https://wx.qiaker.cn/api';
-var appid = 'wxade372ce7f2da061';
+
 Page({
 
   /**
@@ -69,21 +68,8 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this;
-    wx.request({
-      url: server,
-      method: 'GET',
-      data: { 'c': 'info', 'appid': appid },
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function (res) {
-        // console.log(res.data)
-        that.setData({
-          zanLog: res.data.zanLog,
-          zanNum: res.data.zanNum
-        });
-      }
-    })
+    that.getPraiseList(),
+    that.getCommentList()
   },
   /**
    * 页面上拉触底事件的处理函数
