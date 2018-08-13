@@ -1,6 +1,10 @@
 # marry - 微信小程序端
 
 #### 项目介绍 v1.0 version
+<div>
+    扫码体验
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="80" height="80"  alt=""/>
+</div>
 婚礼邀请函
 
 #### 效果图
@@ -18,10 +22,6 @@
    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
 
-#### 扫码体验
-<div>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="80" height="80"  alt=""/>
-</div>
 
 #### 项目说明
  - 服务器：阿里云服务
