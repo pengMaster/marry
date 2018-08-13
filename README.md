@@ -18,6 +18,11 @@
    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
 
+#### 扫码体验
+<div>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="50" height="50"  alt=""/>
+</div>
+
 #### 项目说明
  - 服务器：阿里云服务
  - 域名：pengmaster.com
