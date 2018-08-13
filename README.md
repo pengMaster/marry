@@ -20,7 +20,7 @@
 
 #### 扫码体验
 <div>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="50" height="50"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="80" height="80"  alt=""/>
 </div>
 
 #### 项目说明
