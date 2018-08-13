@@ -1,8 +1,8 @@
 # marry - 微信小程序端
 
 #### 项目介绍 v1.0 version
+<div>扫码体验</div>
 <div>
-    扫码体验
     <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" width="80" height="80"  alt=""/>
 </div>
 婚礼邀请函
