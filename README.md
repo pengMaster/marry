@@ -3,7 +3,7 @@
 #### 项目介绍 v1.0 version
 <div>扫码体验 - 婚礼邀请函</div>
 <div>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" margin-lift = "40" width="80" height="80"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" margin-lift = "40" width="120" height="120"  alt=""/>
 </div>
 
 
