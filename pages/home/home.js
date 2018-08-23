@@ -1,6 +1,6 @@
 var api = require('../../api/api.js')
 var app = getApp()
-
+//数据可用接口返回
 Page({
   data: {
     imgUrls: [{

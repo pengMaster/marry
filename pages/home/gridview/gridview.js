@@ -1,5 +1,6 @@
 // pages/home/gridview/gridview.js 
 var id = ''
+//为方便查看数据格式，写死在这里，后续可接口返回
 var imgUrlPs = [
   'https://pengmaster.com/party/wechat/marry/tai_miao_zip/HY2A0764.jpg',
   'https://pengmaster.com/party/wechat/marry/tai_miao_zip/HY2A0794.jpg',
