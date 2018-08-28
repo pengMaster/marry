@@ -25,15 +25,11 @@ App({
           },
           method: 'GET',
           success: function (res) {
-            console.log('app_res', res)
             // 将openId设成全局
             that.globalData.openId = res.data.openid
-            // that.globalData.user = res.data.user
             that.globalData.flag = res.data.flag
-            console.log('res.data', res.data)
             wx.getUserInfo({
               success: function (res) {
-                console.log('app_res', res)
                 // 将userInfo设成全局
                 that.globalData.userInfo = res.userInfo
                 // that.goHome()

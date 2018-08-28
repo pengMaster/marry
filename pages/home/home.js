@@ -59,6 +59,16 @@ Page({
       dataUrl: "http://dl.stream.qqmusic.qq.com/C100000gSW7F2IKT1w.m4a?fromtag=46",
       title: '',
       coverImgUrl: ''
+    }),
+      that.getWxUserInfo()
+
+  },
+  getWxUserInfo: function(){
+    var that = this
+    wx.getUserInfo({
+      success: function (res) {
+        that.saveUser(app.globalData.openId, res.userInfo)
+      }
     })
   },
   /**
@@ -86,8 +96,22 @@ Page({
   onReady: function() {
 
   },
+  //保存用户信息
+  saveUser: function (openId,userInfo){
+    console.log('userInfo',userInfo)
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'SAVE_USER',
+      },
+      data: {
+        openId: openId,
+        userInfo: userInfo
 
-
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

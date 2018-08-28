@@ -1,7 +1,11 @@
 # marry - 微信小程序端
 
 #### 项目介绍 v1.0 version
-婚礼邀请函
+<div>扫码体验 - 婚礼邀请函</div>
+<div>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/gh_f211ccd8936f_430.jpg" margin-lift = "40" width="120" height="120"  alt=""/>
+</div>
+
 
 #### 效果图
 <div>
@@ -18,11 +22,13 @@
    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
 
+
 #### 项目说明
  - 服务器：阿里云服务
  - 域名：pengmaster.com
  - 数据库：在服务器上装的mysql
  - 后台地址：https://github.com/pengMaster/marry_server
+ - 后台统计地址：https://pengmaster.com/party/marry
  - 项目中引用的网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片禁止传播。
 - 功能简介：
     - 新郎新娘图片展示
@@ -52,3 +58,4 @@
 
  - 前端地址：https://github.com/pengMaster/marry
  - 后台地址：https://github.com/pengMaster/marry_server
+ - 后台统计地址：https://github.com/pengMaster/marry_server_statistic

@@ -55,7 +55,6 @@ Page({
     });
   },
   getUserInfo(e) {
-    console.log(e.detail)
     if (e.detail.errMsg === 'getUserInfo:ok') {
       console.log('获取用户信息成功')
       wx.showLoading({
@@ -63,18 +62,6 @@ Page({
       })
       app.globalData.userInfo = e.detail.rawData
       console.log('app.globalData.userInfo', app.globalData.userInfo)
-      // app._loginUser(e.detail, () => {
-      //   wx.hideLoading()
-      //   if (wx.getStorageSync('phone') == '') {
-      //     console.log('没有绑定手机号')
-      //     this.setData({
-      //       isShowGetPhone: true
-      //     })
-      //   } else {
-      //     console.log('绑定了手机号')
-      //     this.limitLogin(this);
-      //   }
-      // })
     } else {
       console.log('fail', '获取用户信息失败')
       wx.showModal({
@@ -86,19 +73,6 @@ Page({
 
         }
       })
-      // app.showTips(() => {
-      //     wx.hideLoading()
-      //     //分享进入跳转到分享页面
-      //     if (wx.getStorageSync('phone') == '') {
-      //         console.log('没有绑定手机号')
-      //         this.setData({
-      //             isShowGetPhone: true
-      //         })
-      //     } else {
-      //         console.log('绑定了手机号')
-      //         this.limitLogin(this);
-      //     }
-      // })
     }
   },
 })
