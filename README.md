@@ -28,6 +28,7 @@
  - 域名：pengmaster.com
  - 数据库：在服务器上装的mysql
  - 后台地址：https://github.com/pengMaster/marry_server
+ - 后台统计地址：https://pengmaster.com/party/marry
  - 项目中引用的网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片禁止传播。
 - 功能简介：
     - 新郎新娘图片展示
@@ -57,3 +58,4 @@
 
  - 前端地址：https://github.com/pengMaster/marry
  - 后台地址：https://github.com/pengMaster/marry_server
+ - 后台统计地址：https://github.com/pengMaster/marry_server_statistic
