@@ -184,7 +184,7 @@ Page({
       var words = that.data.inputValue;
       wx.request({
         url: api.mobileIn,
-        data: { 'nickName': name, 'nickImage': face, 'comment': words,'openId': app.globalData.openId  },
+        data: { 'nickName': name, 'nickImage': face, 'comment': words, 'openId': app.globalData.openId },
         header: { method: 'SAVE_COMMENT' },
         method: "GET",
         dataType: "json",

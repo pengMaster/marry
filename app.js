@@ -1,7 +1,7 @@
 //app.js
 var api = require('/api/api.js')
 var AppId = 'wxc028256ea6d51af1'
-var AppSecret = '8ca33031477fe04e714875f97a739b0b'
+var AppSecret = '81f336c525fa5cf56384c9442e5735df'
 
 App({
   onLaunch: function () {
@@ -27,6 +27,7 @@ App({
           success: function (res) {
             // 将openId设成全局
             that.globalData.openId = res.data.openid
+            console.log('res.data.openid', res.data.openid)
             that.globalData.flag = res.data.flag
             wx.getUserInfo({
               success: function (res) {
