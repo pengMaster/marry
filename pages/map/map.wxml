@@ -2,7 +2,7 @@
 
 <view class="container">
     <image src='/image/inv.png' class='inv'></image>
-    <image src='https://pengmaster.com/party/wechat/marry/ozfq/HY2A1176.jpg' class='cover' mode='aspectFill'></image>
+    <image src='https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1176.jpg' class='cover' mode='aspectFill'></image>
     <view class='datetime' animation="{{animationData}}">
         <view class='box'>
             <view class="name css13610f7ae66601">

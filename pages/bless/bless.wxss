@@ -78,6 +78,9 @@ page {
     background-color: #f1f2f7;
     padding-bottom: 150rpx;
 }
+.chat_view{
+    margin-bottom: 180rpx;
+}
 .chat_list {
     width: 630rpx;
     margin: 0 auto;

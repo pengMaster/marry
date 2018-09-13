@@ -19,7 +19,7 @@
     </view>
   </view>
 
-  <view wx:if="{{chatList.length > 0}}">
+  <view  class="chat_view" wx:if="{{chatList.length > 0}}">
     <view class="chat_list" wx:for="{{chatList}}" wx:key="user">
       <view class="chat_face">
         <!-- <image src="{{item.face}}" /> -->

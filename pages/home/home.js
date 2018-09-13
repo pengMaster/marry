@@ -1,6 +1,6 @@
 var api = require('../../api/api.js')
 var app = getApp()
-//数据可用接口返回
+//数据可用接口返回 - 在此展示只是为了方便查看数据体
 Page({
   data: {
     imgUrls: [{

@@ -1,7 +1,7 @@
 <view class="container">
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
-          <image class="logo" src="https://pengmaster.com/party/wechat/marry/gwtx/HY2A1088.jpg"></image>
+          <image class="logo" src="https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg"></image>
           <image class="wave" src="{{wave}}" mode="aspectFill"></image>
           <image class="wave wave-bg" src="{{wave}}" mode="aspectFill"></image>
       </view>
