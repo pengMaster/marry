@@ -1,5 +1,9 @@
 # marry - 微信小程序端
 
+#### v1.0.9版本更新
+ - 新增用户制作自己的小程序
+ - [点我查看](https://github.com/pengMaster/marry/blob/master/readMeHost.md)
+ 
 #### 项目介绍 v1.0 version
 <div>扫码体验 - 婚礼邀请函</div>
 <div>
@@ -22,10 +26,7 @@
    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/device-2018-07-30-143036.png" width="150" height="250"  alt=""/>
 </div>
 
-
-#### v1.0.9版本更新
- - 新增用户制作自己的小程序
-    
+ 
 #### 项目说明
  - 服务器：阿里云服务
  - 域名：pengmaster.com
