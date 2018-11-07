@@ -14,12 +14,11 @@
 
 #### 编辑主页面展示
 <div >
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163332.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163416.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163456.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163456.png" width="150" height="250" alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163518.png" width="150" height="250"  alt=""/>
-   <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-163549.png" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165149.png" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165224.png" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165240.png" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165258.png" width="150" height="250" alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165312.png" width="150" height="250"  alt=""/>
 </div>
 
     
