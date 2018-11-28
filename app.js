@@ -33,14 +33,12 @@ App({
               success: function (res) {
                 // 将userInfo设成全局
                 that.globalData.userInfo = res.userInfo
-                // that.goHome()
                 typeof cb == "function" && cb(that.globalData.userInfo, that.globalData.openId, that.globalData.user, that.globalData.flag)
               }
             })
           },
           fail: function (res) { },
           complete: function (res) { 
-            // that.goHome()
           }
         });
       }
@@ -50,6 +48,8 @@ App({
     userInfo: null,
     openId: null,
     user: null,
-    flag: null
+    flag: null,
+    hostUserId:null,
+    isOfficial: true
   }
 })

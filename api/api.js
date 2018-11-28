@@ -28,10 +28,12 @@ const myZan = image +'zan.png'
 const myArrowChart = image +'arrow_chart.png'
 const qrCode = marry + 'qr_code/group_qr_code.png'
 
+//-----分享图片
+const mShareImg = host + 'wechat/marry/ozfq_zip/HY2A1167.jpg'
+
+
 //-----
 const versionInfoDetailShow = image + 'party_home_show.png'
-
-
 
 module.exports = {
   image,
@@ -40,5 +42,5 @@ module.exports = {
   splashWave, splashLoading,
   homeBanner, homeAvater, homePartyRecord, homePartyRecord, homeServiceGuide,
   myBanner, myXinde, myXiaoxi, myZan, myArrowChart,
-  versionInfoDetailShow
+  versionInfoDetailShow, mShareImg
 }

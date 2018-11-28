@@ -25,9 +25,7 @@ Page({
         })
       }
     }),
-      that.getPraiseList(),
-
-      that.getCommentList()
+      that.getPraiseList()
     
   },
 
@@ -68,8 +66,7 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this;
-    that.getPraiseList(),
-    that.getCommentList()
+    that.getPraiseList()
   },
   /**
    * 页面上拉触底事件的处理函数
@@ -88,7 +85,7 @@ Page({
         method: 'GET_PRAISE',
       },
       data: {
-
+        userId: app.globalData.hostUserId
       },
       success: function (res) {
         wx.hideToast()

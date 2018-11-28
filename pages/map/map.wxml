@@ -1,22 +1,73 @@
 <!--pages/invitation/index.wxml-->
 
 <view class="container">
+  <!-- 展示官方 -->
+  <view wx:if="{{isOfficial}}">
+
     <image src='/image/inv.png' class='inv'></image>
-    <image src='https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1176.jpg' class='cover' mode='aspectFill'></image>
+   <image src='{{bgImg}}' class='cover' mode='aspectFill'></image>
     <view class='datetime' animation="{{animationData}}">
-        <view class='box'>
-            <view class="name css13610f7ae66601">
-                <span class="fl">Mr.王</span>
-                <span class="and">&</span>
-                <span class="fr ">Miss.刘</span>
-            </view>
-            <view class="date css13610f7ae66601">
-                <view>谨定于 2018年8月18日</view>
-                <view>农历 2018年七月初八 举办婚礼</view>
-                <view bindtap="markertap">地址：沧州市盐山县庆云镇前簸箕村(点击导航)</view>
-                <view>恭请您的光临</view>
-            </view>
-            <image class="we" src='/images/we.png'></image>
+      <view class='box'>
+        <view class="name css13610f7ae66601">
+          <span class="fl">{{inviteName}}</span>
         </view>
+        <view class="date css13610f7ae66601">
+          <view>{{inviteDateOne}}</view>
+          <view>{{inviteDateTwo}}</view>
+          <view bindtap="markertap">{{inviteAddress}}</view>
+          <view>恭请您的光临</view>
+        </view>
+      </view>
     </view>
+  </view>
+  <!-- 正在创建自己的小程序 -->
+  <view wx:else>
+
+  <image bindtap="editBg" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editWhiteImg}}"></image>
+
+    <image src='/image/inv.png' class='inv'></image>
+    <image src='{{bgImg}}' class='cover' mode='aspectFill'></image>
+    <view class='datetime' animation="{{animationData}}">
+      <view class='box'>
+        <view bindtap="btnName" class="name css13610f7ae66601">
+          <span class="fl">{{inviteName}}</span>
+          <image style='width:15px;height:15px;margin-left:5px;' src="{{editImg}}"></image>
+        </view>
+        <view class="date css13610f7ae66601">
+          <view bindtap="btnDateOne">{{inviteDateOne}}
+            <image style='width:15px;height:15px;margin-left:5px;' src="{{editImg}}"></image>
+          </view>
+          <view bindtap="btnDateTwo">{{inviteDateTwo}}
+            <image style='width:15px;height:15px;margin-left:5px;' src="{{editImg}}"></image>
+          </view>
+          <view bindtap="btnAddress">{{inviteAddress}}
+            <image style='width:15px;height:15px;margin-left:5px;' src="{{editImg}}"></image>
+          </view>
+          <button plain="true" class="confirm-btn" bindtap="btnSave">点击保存</button>
+        </view>
+      </view>
+    </view>
+    <!--弹窗-->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">请填写</view>
+      <view class="modal-content">
+        <view class="modal-input">
+          <input id="{{editId}}" placeholder-class="input-holder" bindblur="inputChange" class="input" placeholder="{{editName}}"></input>
+        </view>
+        <view wx:if="{{isAddress}}">
+          <view class="modal-input">
+            <input placeholder-class="input-holder" bindblur="inputChangeJd" class="input" placeholder="经度"></input>
+          </view>
+          <view class="modal-input">
+            <input placeholder-class="input-holder" bindblur="inputChangeWd" class="input" placeholder="纬度"></input>
+          </view>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+      </view>
+    </view>
+  </view>
 </view>

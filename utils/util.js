@@ -1,8 +1,4 @@
-import {
-  VOL_AND_READING_BEGIN_TIME,
-  OTHER_BEGIN_TIME,
-  MONTH_MAP
-} from './constants.js'
+
 
 const filterContent = (string) => string.replace(/[\r\n]/g, "").replace(/<.*?>/g, "\n")
 
@@ -39,8 +35,13 @@ const getDateList = (type) => {
   return dateList
 }
 
+const getId = () => {
+  return (Math.random() * 10000000).toString(16).substr(0, 4) + '-' + (new Date()).getTime() + '-' + Math.random().toString().substr(2, 5)
+}
+
 module.exports = {
   getDateList,
   filterContent,
-  formatMakettime
+  formatMakettime,
+  getId
 }

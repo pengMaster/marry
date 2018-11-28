@@ -8,7 +8,9 @@
     <!-- <view bindtap='loadMoreFriends' class="face" wx:for="{{zanLog}}" wx:key="user">
       <image src="{{item.face}}" />
     </view> -->
-    <view bindtap='loadMoreFriends' class="face" wx:for="{{zanLog}}" wx:key="user"><image src="{{item[3]}}" /></view>
+    <view bindtap='loadMoreFriends' class="face" wx:for="{{zanLog}}" wx:key="user">
+      <image src="{{item[3]}}" />
+    </view>
   </view>
   <view class="btn_zone">
     <view class="zan fl">
@@ -18,8 +20,10 @@
       <button type="default" open-type="share">分享</button>
     </view>
   </view>
-
-  <view  class="chat_view" wx:if="{{chatList.length > 0}}">
+  <view wx:if="{{!isOfficial}}">
+    <image bindtap="editBg" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editImg}}"></image>
+  </view>
+  <view class="chat_view" wx:if="{{chatList.length > 0}}">
     <view class="chat_list" wx:for="{{chatList}}" wx:key="user">
       <view class="chat_face">
         <!-- <image src="{{item.face}}" /> -->
@@ -30,16 +34,11 @@
           <!-- <text class="chat_user">{{item.nickname}}</text>
           <text class="chat_date">{{item.time}}</text> -->
           <text class="chat_user">{{item[1]}}</text>
-                    <text class="chat_date">{{item[4]}}</text>
+          <text class="chat_date">{{item[4]}}</text>
         </view>
         <!-- <view>{{item.words}}</view> -->
         <view>{{item[3]}}</view>
       </view>
-    </view>
-  </view>
-  <view wx:else>
-    <view class="befirst">
-      <image src="/image/lovemail.gif" />
     </view>
   </view>
   <view class="send_msg">

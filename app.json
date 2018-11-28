@@ -1,22 +1,25 @@
 {
   "pages": [
-   "pages/splash/splash",
-    "pages/map/map",
-    "pages/my/my",
-    "pages/home/gridview/gridview",
+    "pages/splash/splash",
+        "pages/my/my",
+        
+
+
     "pages/bless/bless",
+    "pages/home/gridview/gridview",
     "pages/home/home",
+    "pages/map/map",
     "pages/my/aboutus/aboutus",
     "pages/bless/blessDetail/blessDetail",
-    "pages/my/aboutProject/aboutProject"
+    "pages/my/aboutProject/aboutProject",
+    "pages/test",
+    "pages/my/flow/flow"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#CD96CD",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false
-   
   },
   "tabBar": {
     "list": [

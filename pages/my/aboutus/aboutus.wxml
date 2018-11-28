@@ -1,15 +1,15 @@
 <!--pages/my/aboutus/aboutus.wxml-->
 <view class='view_bg'>
 
-    <view class='text_view_style'>
+  <view class='text_view_style'>
 
-      <image bindtap="previewImage" class='qr_style' src='https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png'></image>
+    <image bindtap="previewImage" class='qr_style' src='https://pengmaster.com/party/wechat/marry/background/ic_qr_code.png'></image>
 
-      <view class='text_style'>QQ群号：830556582</view>
+    <view class='text_style'>QQ群号：830556582</view>
 
-      <view class='text_style'>QQ邮箱：946549990@qq.com</view>
-      
-    </view>
+    <view class='text_style'>QQ：946549990</view>
+
+    <view class='text_style'>微信：peng946549990</view>
+  </view>
 
 </view>
-

@@ -12,5 +12,22 @@
       <text style="width: 294.5px;  font-family: guiqi; border-color: rgb(0, 0, 0); border-style: none; border-radius: 0px; font-style: normal; font-weight: normal; text-align: center; color: rgb(100, 60, 27); font-size: 13px; line-height: 1.5; box-shadow: black 0px 0px 0px; letter-spacing: 0px; top: 0px; left: 0px;">{{item.desc}}</text>
     </view>
   </view>
+  <view wx:if="{{!isOfficial}}">
+  <image bindtap="addImg" class='add_ic' src='{{icAdd}}'></image>
+  </view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">添加图片描述</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input id="{{editId}}" placeholder-class="input-holder" bindblur="inputChange" class="input" placeholder="{{defaultDesc}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">使用默认</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确认保存</view>
+    </view>
+  </view>
 
 </view>

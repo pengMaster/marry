@@ -15,27 +15,46 @@
 <view class="container">
   <scroll-view class="content" scroll-y="true">
 
-    <swiper indicator-dots="{{indicatorDots}}" class='banner_style' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <view wx:if="{{!isOfficial}}">
+      <image bindtap="addImg" class='add_ic' src='{{icAdd}}'></image>
+    </view>
+    <!-- 正在创建自己的小程序 -->
+    <swiper current='{{swiperCurrentIndex}}' indicator-dots="{{indicatorDots}}" class='banner_style' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
           <image src="{{item.imgUrl}}" class="banner_image_style" />
         </swiper-item>
       </block>
     </swiper>
-
+    <!-- 图片列表 -->
     <view class='list bannerStyle' wx:for="{{imgUrls}}" wx:key="{{index}}">
       <view class='list-title'>
         <view class="text-moreDay">
-          <text class="name">{{item.type}}</text>
+          <text class="name">{{item.title}}</text>
         </view>
       </view>
-      <view class='imgList' bindtap='jump' data-id="{{item.type}}">
+      <view class='imgList' bindtap='jump' data-id="{{item.id}}" data-type="{{item.id}}">
         <view>
           <image class="banner_image" mode='scaleToFill' src='{{item.imgUrl}}' data-type="imgUrls" data-img="{{item.imgUrl}}" data-index="0"></image>
         </view>
       </view>
-      <view class="jump" data-id="{{item.type}}" bindtap='jump'>查看详情</view>
-    </view>
+      <view class="jump" data-id="{{item.id}}" bindtap='jump'>查看详情</view>
 
-  </scroll-view>
+</view>
+</scroll-view>
+
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">{{title_hint}}</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input id="{{editId}}" placeholder-class="input-holder" bindblur="inputChange" class="input" placeholder="{{defaultDesc}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+  
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">下一步</view>
+    </view>
+  </view>
 </view>

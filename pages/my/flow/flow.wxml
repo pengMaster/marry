@@ -1,0 +1,23 @@
+<!--pages/my/aboutus/aboutus.wxml-->
+  <scroll-view class="content" scroll-y="true">
+
+  <view class='text_style' >1.点击开始制作，获取制作权限</view>  
+  <view class="line"> </view>
+
+  <view class='text_style' >2.页面上会出现编辑角标，点击角标修改相应内容
+      <view class='function_text'>1）添加首页图片，需要添加描述</view>
+    <view class='function_text'>2）点击图片进入详情，添加详情图片</view>
+    <view class='function_text'>3）导航界面背景，文字，经纬度（可去百度地图转换地址经纬度）</view>
+    <view class='function_text'>4）祝福页面分享链接图片</view>
+  </view>  
+  <view class="line"> </view>
+
+  <view class='text_style' >3.图片尽量控制在200K左右，过大渲染会比较慢</view>  
+  <view class="line"> </view>
+
+  <view class='text_style' >4.不允许传播色情不良信息，违者责任自负</view>  
+
+  <view class="line"> </view>
+  <!-- <image src="../../../image/group_qr_code.png"></image> -->
+</scroll-view>
+

@@ -5,6 +5,13 @@
   line-height: 60rpx;
   
 }
+.edit_bg{
+  z-index:200;
+  left: 90%;
+  top: 25%;
+  position: absolute;
+  text-align: right;
+}
 .friends {
   height: 22%;
   min-height: 0;

@@ -1,24 +1,24 @@
 <view class="container">
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
-          <image class="logo" src="https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg"></image>
+          <image bindtap="uploadLogo" class="logo" src="{{logo}}"></image>
           <image class="wave" src="{{wave}}" mode="aspectFill"></image>
           <image class="wave wave-bg" src="{{wave}}" mode="aspectFill"></image>
       </view>
        <view class='my_layout'>
          <view class="btn_area">
-      <!--身份切换  -->
-      <view class="base_info_view" bindtap="btnSwitchUser">
-        <text class="base_info_text">身份切换</text>
+      <!--制作流程  -->
+      <view class="base_info_view" bindtap="btnMyCreateInfo">
+        <text class="base_info_text">制作流程</text>
         <view class="base_info_right">
-          <text class="text_user_switch_hint">{{user_identity}}</text>
+          <image class="base_info_right_img" src="{{myArrowChart}}"></image>
         </view>
       </view>
          <!--细线  -->
       <view class="line"> </view>
       <!--我的制作  -->
       <view class="base_info_view" bindtap="btnMyCreate">
-        <text class="base_info_text">我的制作</text>
+        <text class="base_info_text">开始制作</text>
         <view class="base_info_right">
           <image class="base_info_right_img" src="{{myArrowChart}}"></image>
         </view>
@@ -57,4 +57,24 @@
     </view>
        </view>
     </view>
+
+    <!--弹窗-->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">{{title_hint}}</view>
+      <view class="modal-content">
+          <view class="modal-input">
+            <input placeholder-class="input-holder" bindblur="inputChangePhone" class="input" placeholder="请输入手机号"></input>
+          </view>
+          <view class="modal-input">
+            <input placeholder-class="input-holder" bindblur="inputChangeWechat" class="input" placeholder="请输入微信号"></input>
+          </view>
+        </view>
+
+      <view class="modal-footer">
+        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+      </view>
+    </view>
+
 </view>
