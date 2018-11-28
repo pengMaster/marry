@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/splash/splash",
-     "pages/my/my",
+        "pages/my/my",
+        
+
+
     "pages/bless/bless",
     "pages/home/gridview/gridview",
     "pages/home/home",
@@ -9,6 +12,7 @@
     "pages/my/aboutus/aboutus",
     "pages/bless/blessDetail/blessDetail",
     "pages/my/aboutProject/aboutProject",
+    "pages/test",
     "pages/my/flow/flow"
   ],
   "window": {
