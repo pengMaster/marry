@@ -1,7 +1,3 @@
-| 生活需要仪式感 |
-| ---- |
-|![baidu](https://github.com/pengMaster/picApplyGit/blob/master/jokeImg/poem.png) |
-
 # marry - 微信小程序端
 
 #### v1.0.9版本更新
@@ -44,6 +40,10 @@
     - 点赞祝福，分享好友
     - 身份切换，制作属于自己的请柬
 
+
+| 生活需要仪式感 |
+| ---- |
+|![baidu](https://github.com/pengMaster/picApplyGit/blob/master/jokeImg/poem.png) |
 
   
 #### 个人说明
