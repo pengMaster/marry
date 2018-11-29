@@ -131,10 +131,12 @@ Page({
           }else{
             //展示官方实例
             app.globalData.hostUserId = 'osaod0ZlCZxFk3qxoDRrrx9lRvU8'
+            app.globalData.isCreate = false
           }
           that.goHome()
         }else{
           //展示官方实例
+          app.globalData.isCreate = false
           app.globalData.hostUserId = 'osaod0ZlCZxFk3qxoDRrrx9lRvU8'
           wx.showModal({
             title: '提示',
@@ -154,6 +156,7 @@ Page({
        
       },
       error: function () {
+        app.globalData.isCreate = false
         that.goHome()
       }
     })

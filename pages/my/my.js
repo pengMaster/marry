@@ -4,7 +4,7 @@ var api = require('../../api/api.js')
 var app = getApp()
 var inputinfo = "";
 var user_identity = '原创'
-var inputWechat= ''
+var inputWechat = ''
 var inputPhone = ''
 
 Page({
@@ -16,8 +16,8 @@ Page({
     animationData: "",
     showModalStatus: false,
     user_identity: user_identity,
-    title_hint:'请填写',
-    logo:'https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg'
+    title_hint: '请填写',
+    logo: 'https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg'
   },
   onLoad: function() {
     console.log('onLoad')
@@ -37,9 +37,9 @@ Page({
     })
   },
   /**
-     * 下载用户图片
-     */
-  downLoadLogo: function () {
+   * 下载用户图片
+   */
+  downLoadLogo: function() {
     var that = this
     wx.request({
       url: api.mobileIn,
@@ -51,7 +51,7 @@ Page({
         userId: app.globalData.hostUserId
 
       },
-      success: function (res) {
+      success: function(res) {
         if (200 == res.statusCode) {
           if (res.data.length >= 1) {
             console.log(res.data)
@@ -63,21 +63,29 @@ Page({
         }
 
       },
-      error: function () {
+      error: function() {
 
       }
     })
   },
-  btnMyCreateInfo: function () {
+  btnMyCreateInfo: function() {
     wx.navigateTo({
       url: 'flow/flow'
     })
   },
   btnMyCreate: function() {
     var that = this
-    this.setData({
-      showModal: true
-    })
+    if (app.globalData.isCreate) {
+      this.setData({
+        showModal: true
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: "未获取到openId，不允许创建！！",
+        showCancel: false
+      })
+    }
   },
   //关于我
   btnAboutMy: function() {
@@ -94,8 +102,8 @@ Page({
   /**
    * 上传头像
    */
-  uploadLogo: function () {
-    if (!app.globalData.isOfficial){
+  uploadLogo: function() {
+    if (!app.globalData.isOfficial) {
       this.chooseImage()
     }
 
@@ -103,14 +111,14 @@ Page({
   /**
    * 选择图片
    */
-  chooseImage: function () {
+  chooseImage: function() {
     var that = this;
     wx.chooseImage({
       // 设置最多可以选择的图片张数，默认9,如果我们设置了多张,那么接收时//就不在是单个变量了,
       count: 1,
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
       sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         // 获取成功,将获取到的地址赋值给临时变量
         var tempFilePaths = res.tempFilePaths;
 
@@ -132,14 +140,14 @@ Page({
             'userId': app.globalData.hostUserId,
             'host': api.host
           },
-          success: function (res) {
+          success: function(res) {
             wx.hideLoading()
             that.setData({
               //将临时变量赋值给已经在data中定义好的变量
               logo: tempFilePaths[0]
             })
           },
-          fail: function (res) {
+          fail: function(res) {
             console.log('fail');
             wx.hideLoading()
 
@@ -147,22 +155,22 @@ Page({
         })
 
       },
-      fail: function (res) {
+      fail: function(res) {
         // fail
       },
-      complete: function (res) {
+      complete: function(res) {
         // complete
       }
     })
   },
   /**
-     * 弹出框蒙层截断touchmove事件
-     */
-  preventTouchMove: function () { },
+   * 弹出框蒙层截断touchmove事件
+   */
+  preventTouchMove: function() {},
   /**
    * 隐藏模态对话框
    */
-  hideModal: function () {
+  hideModal: function() {
     this.setData({
       showModal: false
     });
@@ -170,46 +178,45 @@ Page({
   /**
    * 对话框取消按钮点击事件
    */
-  onCancel: function () {
+  onCancel: function() {
     this.hideModal();
   },
   /**
    * 对话框确认按钮点击事件
    */
-  onConfirm: function () {
+  onConfirm: function() {
     var that = this
-    if ('' == inputPhone){
+    if ('' == inputPhone) {
       that.setData({
         title_hint: '请填写手机号'
       })
-    } else if ('' == inputWechat){
+    } else if ('' == inputWechat) {
       that.setData({
         title_hint: '请填写微信号'
       })
-    }else{
+    } else {
       that.saveHostUser()
       that.hideModal();
     }
-
   },
-  
+
   /**
    * inputChangePhone
    */
-  inputChangePhone: function (e) {
+  inputChangePhone: function(e) {
     inputPhone = e.detail.value
   },
   /**
-  * inputChangePhone
-  */
-  inputChangeWechat: function (e) {
+   * inputChangePhone
+   */
+  inputChangeWechat: function(e) {
     inputWechat = e.detail.value
   },
- 
+
   /**
-  * 保存用户
-  */
-  saveHostUser: function () {
+   * 保存用户
+   */
+  saveHostUser: function() {
     var that = this
     user_identity = '自创'
     wx.showLoading({
@@ -229,7 +236,7 @@ Page({
         userWechat: inputWechat
 
       },
-      success: function (res) {
+      success: function(res) {
         wx.hideLoading()
         if (200 == res.statusCode) {
           app.globalData.isOfficial = false
@@ -242,7 +249,7 @@ Page({
           }
         }
       },
-      error: function () {
+      error: function() {
         wx.hideLoading()
       }
     })

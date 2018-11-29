@@ -50,6 +50,7 @@ App({
     user: null,
     flag: null,
     hostUserId:null,
-    isOfficial: true
+    isOfficial: true,
+    isCreate: true
   }
 })
