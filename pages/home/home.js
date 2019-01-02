@@ -5,6 +5,8 @@ var app = getApp()
 var inputName = ''
 var imgUrlsDefault = []
 
+var musicUrl = 'http://www.ytmp3.cn/down/49676.mp3'
+
 
 //数据可用接口返回 - 在此展示只是为了方便查看数据体
 Page({
@@ -15,7 +17,7 @@ Page({
     interval: 2600,
     duration: 1200,
     isPlayingMusic: false,
-    music_url: "http://dl.stream.qqmusic.qq.com/C100000gSW7F2IKT1w.m4a?fromtag=46",
+    music_url: musicUrl,
     isOfficial: app.globalData.isOfficial,
     icAdd: api.image + "ic_add_round.png",
     title_hint:'添加图片标题'
@@ -25,7 +27,7 @@ Page({
     console.log("onLoad")
     var that = this
     wx.playBackgroundAudio({
-        dataUrl: "http://dl.stream.qqmusic.qq.com/C100000gSW7F2IKT1w.m4a?fromtag=46",
+      dataUrl: musicUrl,
         title: '',
         coverImgUrl: ''
       }),

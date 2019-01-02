@@ -236,7 +236,7 @@ Page({
   zan: function(event) {
     var that = this;
 
-    var userInfo = that.data.userInfo;
+    var userInfo = app.globalData.userInfo;
     console.log(userInfo)
     var name = userInfo.nickName;
     var face = userInfo.avatarUrl;
@@ -272,7 +272,7 @@ Page({
     if (that.data.inputValue) {
       //留言内容不是空值
 
-      var userInfo = that.data.userInfo;
+      var userInfo = app.globalData.userInfo;
       var name = userInfo.nickName;
       var face = userInfo.avatarUrl;
       var words = that.data.inputValue;
