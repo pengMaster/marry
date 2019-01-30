@@ -25,13 +25,6 @@ Page({
       wave: api.splashWave,
       loading: api.splashLoading
     })
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
   },
   onReady: function() {
     var _this = this;
@@ -55,7 +48,6 @@ Page({
     });
   },
   btnEnter: function() {
-    this.getUser()
     this.copyFile()
   },
   //进入主页面
@@ -65,10 +57,13 @@ Page({
     });
   },
   getUserInfo(e) {
+    console.log('getUserInfo')
+    var that = this
     if (e.detail.errMsg === 'getUserInfo:ok') {
       console.log('获取用户信息成功')
       app.globalData.userInfo = e.detail.rawData
       console.log('app.globalData.userInfo', app.globalData.userInfo)
+      that.getUser()
     } else {
       console.log('fail', '获取用户信息失败')
       wx.showModal({
