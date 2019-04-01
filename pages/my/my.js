@@ -75,7 +75,7 @@ Page({
   },
   btnMyCreate: function() {
     var that = this
-    if (undefined != app.globalData.openId && "" != app.globalData.openId) {
+    if (undefined != app.globalData.openId && "" != app.globalData.openId && "" != app.globalData.openId) {
       this.setData({
         showModal: true
       })
