@@ -6,14 +6,16 @@
 
     <view class="img">
       <image bindtap="previewImage" data-src="{{item.imgUrl}}" mode="aspectFill" class='image_style' src='{{item.imgUrl}}'></image>
+      <view wx:if="{{!isOfficial}}">
+        <image bindtap="deleteItem" data-id="{{item}}" data-type="{{item}}" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="/image/delete_black.png"></image>
+      </view>
     </view>
-
     <view class='text'>
       <text style="width: 294.5px;  font-family: guiqi; border-color: rgb(0, 0, 0); border-style: none; border-radius: 0px; font-style: normal; font-weight: normal; text-align: center; color: rgb(100, 60, 27); font-size: 13px; line-height: 1.5; box-shadow: black 0px 0px 0px; letter-spacing: 0px; top: 0px; left: 0px;">{{item.desc}}</text>
     </view>
   </view>
   <view wx:if="{{!isOfficial}}">
-  <image bindtap="addImg" class='add_ic' src='{{icAdd}}'></image>
+    <image bindtap="addImg" class='add_ic' src='{{icAdd}}'></image>
   </view>
   <!--弹窗-->
   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

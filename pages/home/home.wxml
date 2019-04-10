@@ -32,6 +32,9 @@
         <view class="text-moreDay">
           <text class="name">{{item.title}}</text>
         </view>
+        <view wx:if="{{!isOfficial}}">
+        <image bindtap="deleteItem" data-id="{{item}}" data-type="{{item}}" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="/image/delete_black.png"></image>
+        </view>
       </view>
       <view class='imgList' bindtap='jump' data-id="{{item.id}}" data-type="{{item.id}}">
         <view>
@@ -40,8 +43,8 @@
       </view>
       <view class="jump" data-id="{{item.id}}" bindtap='jump'>查看详情</view>
 
-</view>
-</scroll-view>
+    </view>
+  </scroll-view>
 
   <!--弹窗-->
   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
@@ -53,7 +56,7 @@
       </view>
     </view>
     <view class="modal-footer">
-  
+
       <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">下一步</view>
     </view>
   </view>

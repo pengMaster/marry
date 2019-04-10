@@ -12,15 +12,40 @@
     <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_readme/ezgif.com-video-to-gif.gif" width="150" height="250"  alt=""/>
 </div>
 
-#### 编辑主页面展示
-<div >
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165149.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165224.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165240.png" width="150" height="250"  alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165258.png" width="150" height="250" alt=""/>
-    <img src="https://github.com/pengMaster/picApplyGit/blob/master/edit_marry/device-2018-11-07-165312.png" width="150" height="250"  alt=""/>
+#### 1.点击制作，创建用户
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/121554878845_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
+#### 2.首页新增删除模块
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/21554878163_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
+
+#### 3.首页图片详情新增删除
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/41554878324_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
+
+#### 4.导航页面制作引导
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/61554878622_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
+
+#### 5.导航页面经纬度介绍
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/81554878722_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
+
+#### 6.祝福制作引导
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/101554878773_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
+
+#### 7.修改头像引导
+<div>
+    <img src="https://pengmaster.com/party/wechat/marry/flow/151554882488_.pic_hd.jpg" width="150" height="250"  alt=""/>
+</div>
     
 #### 功能说明
  - 免费制作自己的结婚小程序
@@ -52,4 +77,4 @@
 
  - 前端地址：https://github.com/pengMaster/marry
  - 后台地址：https://github.com/pengMaster/marry_server
- - 后台统计地址：https://github.com/pengMaster/marry_server_statistic
+

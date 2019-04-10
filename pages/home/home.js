@@ -20,7 +20,8 @@ Page({
     music_url: musicUrl,
     isOfficial: app.globalData.isOfficial,
     icAdd: api.image + "ic_add_round.png",
-    title_hint:'添加图片标题'
+    title_hint:'添加图片标题',
+    editImg: api.image + "ic_edit.png"
   },
   //生命周期函数--监听页面加载
   onLoad: function(data) {
@@ -45,7 +46,7 @@ Page({
     })
   },
   /**
-   * 现在首页数据
+   * 下载首页数据
    */
   downLoadHomeImgs: function() {
     var that = this
@@ -65,7 +66,8 @@ Page({
             console.log(res.data)
             //更新数据
             that.setData({
-              imgUrls: res.data
+              imgUrls: res.data,
+              swiperCurrentIndex: 0
             })
           }
         }
@@ -84,11 +86,50 @@ Page({
     })
 
   },
+  // 删除单个模块
+  deleteItem: function (e) {
+    let item = e.currentTarget.dataset.id
+    this.deleteDetaiilImg(item)
+  },
+  /**
+  * 删除单个模块
+  */
+  deleteDetaiilImg: function (item) {
+    wx.showLoading({
+      title: '正在删除...',
+    })
+    var that = this
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'DELETE_ITEM_IMAGES',
+      },
+      data: {
+        itemJson: item
+      },
+      success: function (res) {
+        wx.hideLoading()
+        if (200 == res.statusCode) {
+          if (res.data == "success") {
+            that.downLoadHomeImgs()
+          } else if (res.data == "notFile") {
+            wx.showToast({
+              title: '未找到需要删除的文件',
+              image: '../../../image/error.png'
+            })
+          }
+        }
+      },
+      error: function () {
+        wx.hideLoading()
+      }
+    })
+  },
   /**
    * 添加图片
    */
   addImg: function(e) {
-
     this.setData({
       showModal: true
     });
@@ -138,11 +179,12 @@ Page({
           },
           success: function(res) {
             wx.hideLoading()
-            that.setData({
-              //将临时变量赋值给已经在data中定义好的变量
-              imgUrls: imgUrlsDefault,
-              swiperCurrentIndex:0
-            })
+            that.downLoadHomeImgs()
+            // that.setData({
+            //   //将临时变量赋值给已经在data中定义好的变量
+            //   imgUrls: imgUrlsDefault,
+            //   swiperCurrentIndex:0
+            // })
           },
           fail: function(res) {
             console.log('fail');

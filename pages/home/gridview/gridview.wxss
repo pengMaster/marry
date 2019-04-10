@@ -5,12 +5,19 @@
   background-size: cover;
   /*background: url('https://pengmaster.com/party/wechat/marry/background/fenhong.jpg') no-repeat center; */
 }
-
+.edit_bg{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 10px;
+  margin-top: 10px;
+}
 .img {
   margin-top: 5px;
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .add_ic{
   width: 60px;

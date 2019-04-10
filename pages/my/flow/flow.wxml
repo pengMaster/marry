@@ -1,7 +1,7 @@
 <!--pages/my/aboutus/aboutus.wxml-->
-  <scroll-view class="content" scroll-y="true">
+<scroll-view class="content" scroll-y="true">
 
-  <view class='text_style' >1.点击开始制作，获取制作权限</view>  
+  <!-- <view class='text_style' >1.点击开始制作，获取制作权限</view>  
   <view class="line"> </view>
 
   <view class='text_style' >2.页面上会出现编辑角标，点击角标修改相应内容
@@ -17,7 +17,19 @@
 
   <view class='text_style' >4.不允许传播色情不良信息，违者责任自负</view>  
 
-  <view class="line"> </view>
-  <!-- <image src="../../../image/group_qr_code.png"></image> -->
+  <view class="line"> </view> -->
+  <view class='text_style'>1.点击开始制作，获取制作权限</view>
+  <image class='image' src="{{imgUrlPs[0]}}"></image>
+  <view class='text_style'>2.首页制作引导</view>
+  <image class='image' src="{{imgUrlPs[1]}}"></image>
+  <view class='text_style'>3.详情制作引导</view>
+  <image class='image' src="{{imgUrlPs[2]}}"></image>
+  <view class='text_style'>4.导航页面制作引导</view>
+  <image class='image' src="{{imgUrlPs[3]}}"></image>
+  <view class='text_style'>5.导航页面经纬度介绍</view>
+  <image class='image' src="{{imgUrlPs[4]}}"></image>
+  <view class='text_style'>6.祝福制作引导</view>
+  <image class='image' src="{{imgUrlPs[5]}}"></image>
+  <view class='text_style'>7.修改头像引导</view>
+  <image class='image' src="{{imgUrlPs[6]}}"></image>
 </scroll-view>
-

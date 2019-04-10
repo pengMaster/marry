@@ -241,6 +241,9 @@ Page({
         if (200 == res.statusCode) {
           app.globalData.isOfficial = false
           app.globalData.hostUserId = app.globalData.openId
+          wx.showToast({
+            title: '创建成功，请参考制作流程开始制作'
+          })
           if (res.data.length >= 1) {
             //更新数据
             that.setData({
@@ -251,6 +254,9 @@ Page({
       },
       error: function() {
         wx.hideLoading()
+        wx.showToast({
+          title: '创建失败，请退出重新登陆'
+        })
       }
     })
   },

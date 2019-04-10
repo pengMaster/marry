@@ -117,7 +117,6 @@ Page({
       },
       success: function (res) {
         if (200 == res.statusCode) {
-
           if (res.data.length >= 1) {
             //自己创建小程序了
             if (undefined == app.globalData.hostUserId) {

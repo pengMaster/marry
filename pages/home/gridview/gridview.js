@@ -46,6 +46,11 @@ Page({
       showModal: true
     })
   },
+  // 删除单个图片
+  deleteItem: function (e) {
+    let item = e.currentTarget.dataset.id
+    this.deleteDetaiilImg(item)
+  },
   /**
    * 选择图片
    */
@@ -86,10 +91,7 @@ Page({
           },
           success: function(res) {
             wx.hideLoading()
-            that.setData({
-              //将临时变量赋值给已经在data中定义好的变量
-              imgUrls: imgUrlsDefault
-            })
+            that.downLoadDetaiilImgs()
           },
           fail: function(res) {
             console.log('fail');
@@ -108,7 +110,7 @@ Page({
     })
   },
   /**
-  * 现在首页数据
+  * 下载首页数据
   */
   downLoadDetaiilImgs: function () {
     var that = this
@@ -127,13 +129,45 @@ Page({
             for(var i=0;i<res.data.length;i++){
               imgUrlsDefaultPre[i] = res.data[i].imgUrl
             }
-            //更新数据
-            that.setData({
-              imgUrls: res.data
+          }
+          //更新数据
+          that.setData({
+            imgUrls: res.data
+          })
+        }
+
+      },
+      error: function () {
+
+      }
+    })
+  },
+  /**
+  * 删除单个图片
+  */
+  deleteDetaiilImg: function (item) {
+    console.log("item", item)
+    var that = this
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'DELETE_DETAIL_IMAGES',
+      },
+      data: {
+        itemJson: item
+      },
+      success: function (res) {
+        if (200 == res.statusCode) {
+          if (res.data=="success"){
+            that.downLoadDetaiilImgs()
+          }else if (res.data == "notFile"){
+            wx.showToast({
+              title: '未找到需要删除的文件',
+              image: '../../../image/error.png'
             })
           }
         }
-
       },
       error: function () {
 

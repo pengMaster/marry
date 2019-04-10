@@ -75,6 +75,11 @@ input-holder {
   text-align: center;
   border-right: 1px solid #dedede;
 }
+.edit_bg{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
 .btn-confirm {
   width: 100%;
   color: #ec5300;

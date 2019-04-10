@@ -23,7 +23,7 @@
   <!-- 正在创建自己的小程序 -->
   <view wx:else>
 
-  <image bindtap="editBg" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editWhiteImg}}"></image>
+  <image bindtap="editBg" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editImg}}"></image>
 
     <image src='/image/inv.png' class='inv'></image>
     <image src='{{bgImg}}' class='cover' mode='aspectFill'></image>
