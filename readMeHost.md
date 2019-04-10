@@ -14,37 +14,37 @@
 
 #### 1.点击制作，创建用户
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/121554878845_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/121554878845_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 2.首页新增删除模块
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/21554878163_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/21554878163_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 3.首页图片详情新增删除
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/41554878324_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/41554878324_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 4.导航页面制作引导
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/61554878622_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/61554878622_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 5.导航页面经纬度介绍
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/81554878722_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/81554878722_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 6.祝福制作引导
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/101554878773_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/101554878773_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
 
 #### 7.修改头像引导
 <div>
-    <img src="https://pengmaster.com/party/wechat/marry/flow/151554882488_.pic_hd.jpg" width="150" height="250"  alt=""/>
+    <img src="https://github.com/pengMaster/picApplyGit/blob/master/marry_flow/151554882488_.pic_hd.jpg" width="150" height="250"  alt=""/>
 </div>
     
 #### 功能说明
