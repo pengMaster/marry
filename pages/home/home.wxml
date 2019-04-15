@@ -44,6 +44,8 @@
       <view class="jump" data-id="{{item.id}}" bindtap='jump'>查看详情</view>
 
     </view>
+
+    <ad class='list bannerStyle' unit-id="adunit-b715e0ea80c4657b"></ad>
   </scroll-view>
 
   <!--弹窗-->

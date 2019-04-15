@@ -5,6 +5,13 @@
   line-height: 60rpx;
   
 }
+.hide {
+  display: none;
+}
+ 
+.show {
+  display: block;
+}
 .edit_bg{
   z-index:200;
   left: 90%;
@@ -13,7 +20,7 @@
   text-align: right;
 }
 .friends {
-  height: 22%;
+  height: 120px;
   min-height: 0;
   overflow: hidden;
   width: 600rpx;
@@ -54,6 +61,8 @@
 }
 .zan {
   width: 300rpx;
+  background: #CD96CD;
+  color: white
 }
 .share {
   width: 300rpx;
@@ -167,6 +176,8 @@ page {
     font-size: 36rpx;
     line-height: 80rpx;
     float: right;
+    background: #CD96CD;
+    color: white
 }
 
 .befirst {

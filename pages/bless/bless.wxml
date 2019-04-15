@@ -13,10 +13,10 @@
     </view>
   </view>
   <view class="btn_zone">
-    <view class="zan fl">
-      <button type="primary" bindtap='zan'>送上祝福</button>
+    <view class="fl,{{showOrHidden?'show':'hide'}}">
+      <button class='zan' bindtap='zan'>送上祝福</button>
     </view>
-    <view class="share fr">
+    <view class="share fr,{{showOrHidden?'show':'hide'}}">
       <button type="default" open-type="share">分享</button>
     </view>
   </view>
@@ -41,10 +41,10 @@
       </view>
     </view>
   </view>
-  <view class="send_msg">
+  <view class="send_msg,{{showOrHidden?'show':'hide'}}">
     <form bindreset="foo">
       <input placeholder="在这里输入您要说的话" class="send_ipt" bindinput="bindKeyInput" />
-      <button type="primary" form-type="reset" class="send_btn">发布</button>
+      <button form-type="reset" class="send_btn">发布</button>
     </form>
   </view>
 </view>

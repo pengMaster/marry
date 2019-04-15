@@ -106,7 +106,8 @@ Page({
         method: 'DELETE_ITEM_IMAGES',
       },
       data: {
-        itemJson: item
+        itemJson: item,
+        hostUserId: app.globalData.hostUserId
       },
       success: function (res) {
         wx.hideLoading()
@@ -116,7 +117,12 @@ Page({
           } else if (res.data == "notFile") {
             wx.showToast({
               title: '未找到需要删除的文件',
-              image: '../../../image/error.png'
+              image: '../../image/error.png'
+            })
+          } else if (res.data == "notYou") {
+            wx.showToast({
+              title: '不允许删除官方案例',
+              image: '../../image/error.png'
             })
           }
         }

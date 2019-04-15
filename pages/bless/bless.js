@@ -12,7 +12,8 @@ Page({
     inputValue: '',
     zanNum: 0,
     editImg: api.image + "ic_edit.png",
-    isOfficial: app.globalData.isOfficial
+    isOfficial: app.globalData.isOfficial,
+    showOrHidden: false,//判断显示与否的，true表示显示，反之隐藏
   },
 
   /**
@@ -28,12 +29,37 @@ Page({
           })
         }
       }),
-      that.getPraiseList(),
+      that.getStatus()
+  },
 
-      that.getCommentList(),
-
-      that.getSharePic()
-
+  /**
+  * 是否显示
+  */
+  getStatus: function () {
+    var that = this
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'isHide',
+      },
+      data: {
+        userId: app.globalData.hostUserId
+      },
+      success: function (res) {
+        wx.hideToast()
+        if (200 == res.statusCode) {
+          if('yes'==res.data){
+            that.setData({
+              showOrHidden: true,//判断显示与否的，true表示显示，反之隐藏
+            })
+          }
+            that.getPraiseList(),
+            that.getCommentList(),
+            that.getSharePic()
+        }
+      },
+    })
   },
   /**
    * 生命周期函数--监听页面显示

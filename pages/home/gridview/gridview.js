@@ -85,13 +85,24 @@ Page({
           formData: {
             'desc': defaultDesc,
             'userId': app.globalData.openId,
+            'hostUserId': app.globalData.hostUserId,
             'id': (Math.random() * 10000000).toString(16).substr(0, 4) + '-' + (new Date()).getTime() + '-' + Math.random().toString().substr(2, 5),
             'bannerId': id,
             'host': api.host,
           },
           success: function(res) {
-            wx.hideLoading()
-            that.downLoadDetaiilImgs()
+            if(200 ==res.statusCode){
+              wx.hideLoading()
+              if (res.data == "notYou"){
+                wx.showToast({
+                  title: '不允许修改官方案例',
+                  image: '../../../image/error.png'
+                })
+              }
+              else{
+                that.downLoadDetaiilImgs()
+              }
+            }
           },
           fail: function(res) {
             console.log('fail');
@@ -155,7 +166,8 @@ Page({
         method: 'DELETE_DETAIL_IMAGES',
       },
       data: {
-        itemJson: item
+        itemJson: item,
+        hostUserId: app.globalData.hostUserId
       },
       success: function (res) {
         if (200 == res.statusCode) {
@@ -164,6 +176,11 @@ Page({
           }else if (res.data == "notFile"){
             wx.showToast({
               title: '未找到需要删除的文件',
+              image: '../../../image/error.png'
+            })
+          } else if (res.data == "notYou") {
+            wx.showToast({
+              title: '不允许删除官方案例',
               image: '../../../image/error.png'
             })
           }

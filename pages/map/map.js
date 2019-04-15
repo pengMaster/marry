@@ -2,7 +2,7 @@ var api = require('../../api/api.js')
 var app = getApp()
 var editId = ''
 var editName = ''
-var bgImg = 'https://pengmaster.com/party/wechat/marry/ozfq_zip/HY2A1176.jpg'
+var bgImg = ''
 
 /**
  * 需要上传信息

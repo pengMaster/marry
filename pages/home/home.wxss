@@ -3,7 +3,9 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-
+.adStyle{
+  
+}
 .content {
   height: 100%;
   width: 100%;
