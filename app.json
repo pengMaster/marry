@@ -11,6 +11,9 @@
     "pages/my/aboutProject/aboutProject",
     "pages/my/flow/flow"
   ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#CD96CD",

@@ -16,7 +16,7 @@ Page({
     autoplay: true,
     interval: 2600,
     duration: 1200,
-    isPlayingMusic: false,
+    isPlayingMusic: true,
     music_url: musicUrl,
     isOfficial: app.globalData.isOfficial,
     icAdd: api.image + "ic_add_round.png",
