@@ -117,7 +117,10 @@ Page({
       },
       success: function (res) {
         if (200 == res.statusCode) {
-          if (res.data.length >= 100) {
+          if (res.data.length >= 1) {
+            //是否展示广告位
+            app.globalData.isShowAd = res.data[0][8]
+            console.log("app.globalData.isShowAd", app.globalData.isShowAd)
             //自己创建小程序了
             if (undefined == app.globalData.hostUserId) {
               app.globalData.hostUserId = app.globalData.openId

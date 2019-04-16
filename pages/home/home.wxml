@@ -45,7 +45,7 @@
 
     </view>
 
-    <ad class='list bannerStyle' unit-id="adunit-b715e0ea80c4657b"></ad>
+    <ad wx:if="{{showOrHidden}}" class="list bannerStyle" unit-id="adunit-b715e0ea80c4657b"></ad>
   </scroll-view>
 
   <!--弹窗-->

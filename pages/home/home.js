@@ -67,7 +67,8 @@ Page({
             //更新数据
             that.setData({
               imgUrls: res.data,
-              swiperCurrentIndex: 0
+              swiperCurrentIndex: 0,
+              showOrHidden: app.globalData.isShowAd == "1" ? false : true
             })
           }
         }

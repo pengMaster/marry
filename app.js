@@ -42,6 +42,7 @@ App({
     flag: null,
     hostUserId:null,
     isOfficial: true,
-    isCreate: true
+    isCreate: true,
+    isShowAd:null
   }
 })
