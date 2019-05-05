@@ -77,4 +77,18 @@
       </view>
     </view>
 
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove1" wx:if="{{showModal1}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal1}}">
+    <view class="modal-title">设置应用名称</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input id="{{editId}}" placeholder-class="input-holder" bindblur="inputChangeAppName" class="input" placeholder="Marry"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel1" data-status="cancel">使用默认</view>
+      <view class="btn-confirm" bindtap="onConfirm1" data-status="confirm">确认保存</view>
+    </view>
+  </view>
 </view>

@@ -22,7 +22,7 @@
     <swiper current='{{swiperCurrentIndex}}' indicator-dots="{{indicatorDots}}" class='banner_style' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{item.imgUrl}}" class="banner_image_style" />
+          <image src="{{item.imgUrl}}" class="banner_image_style" mode="aspectFill"/>
         </swiper-item>
       </block>
     </swiper>
@@ -38,7 +38,7 @@
       </view>
       <view class='imgList' bindtap='jump' data-id="{{item.id}}" data-type="{{item.id}}">
         <view>
-          <image class="banner_image" mode='scaleToFill' src='{{item.imgUrl}}' data-type="imgUrls" data-img="{{item.imgUrl}}" data-index="0"></image>
+          <image class="banner_image" mode="aspectFill" src='{{item.imgUrl}}' data-type="imgUrls" data-img="{{item.imgUrl}}" data-index="0"></image>
         </view>
       </view>
       <view class="jump" data-id="{{item.id}}" bindtap='jump'>查看详情</view>

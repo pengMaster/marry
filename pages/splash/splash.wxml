@@ -3,14 +3,14 @@
     <image class="remind-img" src="{{loading}}"></image>
   </view>
   <block wx:else>
-  <text class="title">Marry</text>
+  <text class="title">{{appName}}</text>
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
           <image class="logo" src="{{logo}}"></image>
           <image class="wave" src="{{wave}}" mode="aspectFill"></image>
           <image class="wave wave-bg" src="{{wave}}" mode="aspectFill"></image>
       </view>
-    <button class="confirm-btn" open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindtap="btnEnter">进入婚礼</button>
+    <button class="confirm-btn" open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindtap="btnEnter">点击进入</button>
     </view>
   </block>
 </view>

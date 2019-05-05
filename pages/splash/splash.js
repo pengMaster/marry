@@ -11,7 +11,8 @@ Page({
     userid: '',
     passwd: '',
     angle: 0,
-    logo: 'https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg'
+    logo: 'https://pengmaster.com/party/wechat/marry/gwtx_zip/HY2A1088.jpg',
+    appName: "Marry"
   },
   onLoad: function(options) {
     var that = this
@@ -19,6 +20,8 @@ Page({
     //获取宿主用户Id
     if (null != options)
       app.globalData.hostUserId = options.hostUserId
+
+    that.downLoadLogo()
 
     that.setData({
       //图片地址
@@ -46,6 +49,49 @@ Page({
         });
       }
     });
+  },
+  /**
+   * 下载用户图片
+   */
+  downLoadLogo: function () {
+    var that = this
+    var userId = null
+    if (null != app.globalData.hostUserId){
+      userId = app.globalData.hostUserId
+    }else{
+      userId = app.globalData.openId
+    }
+
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'GET_IMAGE_LOGO',
+      },
+      data: {
+        userId: userId
+      },
+      success: function (res) {
+        if (200 == res.statusCode) {
+          if (res.data.length >= 1) {
+            console.log(res.data)
+            //更新数据
+            that.setData({
+              logo: res.data[0].imgUrl
+            })
+            if (null != res.data[0].appName && "null"!= res.data[0].appName){
+              that.setData({
+                appName: res.data[0].appName
+              })
+            }
+          }
+        }
+
+      },
+      error: function () {
+
+      }
+    })
   },
   btnEnter: function() {
     this.copyFile()

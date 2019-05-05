@@ -6,6 +6,7 @@ var inputinfo = "";
 var user_identity = '原创'
 var inputWechat = ''
 var inputPhone = ''
+var inputAppName = 'Marry'
 
 Page({
 
@@ -103,10 +104,29 @@ Page({
    * 上传头像
    */
   uploadLogo: function() {
+    var that = this
     if (!app.globalData.isOfficial) {
-      this.chooseImage()
+      that.setData({
+        showModal1: true
+      })
     }
-
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel1: function () {
+    var that = this
+    that.hideModal1()
+    inputAppName = "Marry"
+    that.chooseImage()
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm1: function () {
+    var that = this
+    that.hideModal1()
+    that.chooseImage()
   },
   /**
    * 选择图片
@@ -138,7 +158,8 @@ Page({
           formData: {
             'id': (Math.random() * 10000000).toString(16).substr(0, 4) + '-' + (new Date()).getTime() + '-' + Math.random().toString().substr(2, 5),
             'userId': app.globalData.hostUserId,
-            'host': api.host
+            'host': api.host,
+            'appName': inputAppName,
           },
           success: function(res) {
             wx.hideLoading()
@@ -173,6 +194,14 @@ Page({
   hideModal: function() {
     this.setData({
       showModal: false
+    });
+  },
+  /**
+ * 隐藏模态对话框
+ */
+  hideModal1: function () {
+    this.setData({
+      showModal1: false
     });
   },
   /**
@@ -212,7 +241,12 @@ Page({
   inputChangeWechat: function(e) {
     inputWechat = e.detail.value
   },
-
+  /**
+   * inputChangeAppName
+   */
+  inputChangeAppName: function (e) {
+    inputAppName = e.detail.value
+  },
   /**
    * 保存用户
    */
