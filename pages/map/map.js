@@ -9,12 +9,12 @@ var bgImg = ''
  * inviteLongitude:经度
  * inviteLatitude:纬度
  */
-let inviteName = 'Mr.王&Miss.刘'
-let inviteDateOne = '谨定于 2018年8月18日'
-let inviteDateTwo = '农历 2018年七月初八 举办婚礼'
-let inviteAddress = '地址：沧州市盐山县庆云镇前簸箕村(点击导航)'
-let inviteLongitude = 117.398193
-let inviteLatitude = 37.895525
+let inviteName = ''//Mr.王&Miss.刘
+let inviteDateOne = ''//谨定于 2018年8月18日
+let inviteDateTwo = ''//农历 2018年七月初八 举办婚礼
+let inviteAddress = ''//地址：沧州市盐山县庆云镇前簸箕村(点击导航)
+let inviteLongitude = null//117.398193
+let inviteLatitude = null//37.895525
 
 Page({
   data: {
@@ -64,6 +64,12 @@ Page({
         if (200 == res.statusCode) {
           if (res.data.length >= 1) {
             console.log(res.data)
+            inviteName=res.data[0][5],
+            inviteDateOne = res.data[0][6],
+            inviteDateTwo = res.data[0][7],
+            inviteAddress = res.data[0][8],
+            inviteLongitude = res.data[0][9],
+            inviteLatitude = res.data[0][10],
             //更新数据
             that.setData({
               inviteName: res.data[0][5],
@@ -104,7 +110,7 @@ Page({
     this.setData({
       showModal: true,
       editId: 'btnName',
-      editName: 'Mr.王 & Miss.刘',
+      editName: inviteName,
       isAddress: false
     })
   },
@@ -115,7 +121,7 @@ Page({
     this.setData({
       showModal: true,
       editId: 'btnDateOne',
-      editName: '谨定于 2018年8月18日',
+      editName: inviteDateOne,
       isAddress: false
     })
   },
@@ -126,7 +132,7 @@ Page({
     this.setData({
       showModal: true,
       editId: 'btnDateTwo',
-      editName: '农历 2018年七月初八 举办婚礼',
+      editName: inviteDateTwo,
       isAddress: false
     })
   },
@@ -137,7 +143,7 @@ Page({
     this.setData({
       showModal: true,
       editId: 'btnAddress',
-      editName: '地址：沧州市盐山县庆云镇前簸箕村(点击导航)',
+      editName: inviteAddress,
       isAddress: true
     })
   },
@@ -163,11 +169,7 @@ Page({
    * 对话框确认按钮点击事件
    */
   onConfirm: function() {
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
-    })
+    this.upLoadMapInfo()
     this.hideModal();
   },
   /**
@@ -183,7 +185,6 @@ Page({
     } else if ('btnAddress' == e.target.id) {
       inviteAddress = e.detail.value
     }
-
   },
   /**
    * input输入框经度内容
@@ -197,11 +198,53 @@ Page({
    */
   inputChangeWd: function(e) {
     console.log(e.detail.value)
+    inviteLatitude = e.detail.value
   },
   /**
-   * 保存信息
+   * 上传地图信息
    */
-  btnSave: function(e) {
+  upLoadMapInfo: function() {
+    var that = this
+    wx.showLoading({
+      title: '正在上传...',
+    })
+    wx.request({
+      url: api.mobileIn,
+      method: 'GET',
+      header: {
+        method: 'SAVE_MAP_INFO',
+      },
+      data: {
+        'inviteName': inviteName,
+        'inviteDateOne': inviteDateOne,
+        'inviteDateTwo': inviteDateTwo,
+        'inviteAddress': inviteAddress,
+        'inviteLongitude': inviteLongitude,
+        'inviteLatitude': inviteLatitude,
+        'userId': app.globalData.hostUserId,
+        'isOfficial': app.globalData.isOfficial
+      },
+      success: function (res) {
+        wx.hideLoading()
+        //更新数据
+        that.setData({
+          inviteName: inviteName,
+          inviteDateOne: inviteDateOne,
+          inviteDateTwo: inviteDateTwo,
+          inviteAddress: inviteAddress,
+          inviteLongitude: inviteLongitude,
+          inviteLatitude: inviteLatitude
+        })
+      },
+      error: function () {
+        wx.hideLoading()
+      }
+    })
+  },
+  /**
+   * 上传背景图片
+   */
+  upLoadBgImage: function () {
     wx.showLoading({
       title: '正在上传...',
     })
@@ -213,28 +256,18 @@ Page({
         "Content-Type": "multipart/form-data",
         'accept': 'application/json',
         'Authorization': 'Bearer ..', //若有token，此处换上你的token，没有的话省略
-        'method': 'SAVE_MAP_INFO'
+        'method': 'SAVE_MAP_IMAGE'
       },
       formData: {
-        'inviteName': inviteName,
-        'inviteDateOne': inviteDateOne,
-        'inviteDateTwo': inviteDateTwo,
-        'inviteAddress': inviteAddress,
-        'inviteLongitude': inviteLongitude,
-        'inviteLatitude': inviteLatitude,
         'userId': app.globalData.hostUserId,
         'host': api.host,
-        'isOfficial':app.globalData.isOfficial
+        'isOfficial': app.globalData.isOfficial
       },
-      success: function(res) {
+      success: function (res) {
         wx.hideLoading()
-        var data = res.data;
-        console.log('data');
       },
-      fail: function(res) {
-        console.log('fail');
+      fail: function (res) {
         wx.hideLoading()
-
       },
     })
   },
@@ -261,7 +294,7 @@ Page({
         // fail
       },
       complete: function(res) {
-        // complete
+        that.upLoadBgImage()
       }
     })
   },

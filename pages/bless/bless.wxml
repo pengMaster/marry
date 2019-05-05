@@ -21,7 +21,7 @@
     </view>
   </view>
   <view wx:if="{{!isOfficial}}">
-    <image bindtap="editBg" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editImg}}"></image>
+    <image bindtap="showTitleLayout" class='edit_bg' style='width:20px;height:20px;margin-left:5px;' src="{{editImg}}"></image>
   </view>
   <view class="chat_view" wx:if="{{chatList.length > 0}}">
     <view class="chat_list" wx:for="{{chatList}}" wx:key="user">
@@ -46,5 +46,20 @@
       <input placeholder="在这里输入您要说的话" class="send_ipt" bindinput="bindKeyInput" />
       <button form-type="reset" class="send_btn">发布</button>
     </form>
+  </view>
+
+   <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">设置标题名称</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input id="{{editId}}" placeholder-class="input-holder" bindblur="inputChangeTitleName" class="input" placeholder="{{inputTitleName}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">使用默认</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确认保存</view>
+    </view>
   </view>
 </view>

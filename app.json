@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/splash/splash",
-     "pages/my/my",
+    "pages/my/my",
     "pages/bless/bless",
     "pages/home/gridview/gridview",
     "pages/home/home",
@@ -52,5 +52,6 @@
     "backgroundColor": "#fff",
     "color": "#5f5f5f"
   },
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "sitemapLocation": "sitemap.json"
 }

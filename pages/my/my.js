@@ -54,7 +54,7 @@ Page({
       },
       success: function(res) {
         if (200 == res.statusCode) {
-          if (res.data.length >= 1) {
+          if (null != res.data && res.data.length >= 1) {
             console.log(res.data)
             //更新数据
             that.setData({

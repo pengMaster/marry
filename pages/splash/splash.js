@@ -55,8 +55,8 @@ Page({
    */
   downLoadLogo: function () {
     var that = this
-    var userId = null
-    if (null != app.globalData.hostUserId){
+    var userId = ""
+    if (null != app.globalData.hostUserId && "null" != app.globalData.hostUserId){
       userId = app.globalData.hostUserId
     }else{
       userId = app.globalData.openId
@@ -79,9 +79,9 @@ Page({
             that.setData({
               logo: res.data[0].imgUrl
             })
-            if (null != res.data[0].appName && "null"!= res.data[0].appName){
+            if (null != res.data[0].appTitleName && "null" != res.data[0].appTitleName){
               that.setData({
-                appName: res.data[0].appName
+                appName: res.data[0].appTitleName
               })
             }
           }

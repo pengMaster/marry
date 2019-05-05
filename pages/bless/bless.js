@@ -2,6 +2,7 @@
 var api = require('../../api/api.js')
 var app = getApp()
 var bgShare = ''
+var inputTitleName = "震惊！她竟然做出了这种事情"
 
 Page({
   /**
@@ -14,6 +15,7 @@ Page({
     editImg: api.image + "ic_edit.png",
     isOfficial: app.globalData.isOfficial,
     showOrHidden: false,//判断显示与否的，true表示显示，反之隐藏
+    inputTitleName: inputTitleName
   },
 
   /**
@@ -90,6 +92,47 @@ Page({
   onUnload: function() {
 
   },
+
+/**
+ * 显示标题
+ */
+  showTitleLayout: function (e) {
+    var that = this
+    that.setData({
+      showModal: true
+    })
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel: function () {
+    var that = this
+    inputTitleName = "震惊！她竟然做出了这种事情"
+    that.hideModal()
+    that.upLoadImage()
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm: function () {
+    var that = this
+    that.hideModal()
+    that.upLoadImage()
+  },
+  /**
+* 隐藏模态对话框
+*/
+  hideModal: function () {
+    this.setData({
+      showModal: false
+    });
+  },
+/**
+ * inputChangeTitleName
+ */
+  inputChangeTitleName: function (e) {
+    inputTitleName = e.detail.value
+  },
   /**
    * 获取分享图片
    */
@@ -109,15 +152,17 @@ Page({
         if (200 == res.statusCode) {
           console.log(res.data)
           //更新数据
-          bgShare = res.data[0][2]
+          bgShare = res.data[0][2],
+          inputTitleName = res.data[0][5]
         }
       },
     })
   },
+ 
   /**
    * 修改分享图片
    */
-  editBg: function(e) {
+  upLoadImage: function () {
     var that = this;
     wx.chooseImage({
       // 设置最多可以选择的图片张数，默认9,如果我们设置了多张,那么接收时//就不在是单个变量了,
@@ -141,6 +186,7 @@ Page({
           formData: {
             'userId': app.globalData.hostUserId,
             'host': api.host,
+            'inputTitleName': inputTitleName
           },
           success: function (res) {
             wx.showModal({
@@ -243,7 +289,7 @@ Page({
 
     var that = this;
     return {
-      title: '诚意邀请你参加我们的婚礼',
+      title: inputTitleName,
       imageUrl: bgShare,
       path: "pages/splash/splash?hostUserId=" + app.globalData.hostUserId,
       success: function(res) {

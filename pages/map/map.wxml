@@ -43,7 +43,6 @@
           <view bindtap="btnAddress">{{inviteAddress}}
             <image style='width:15px;height:15px;margin-left:5px;' src="{{editImg}}"></image>
           </view>
-          <button plain="true" class="confirm-btn" bindtap="btnSave">点击保存</button>
         </view>
       </view>
     </view>
