@@ -15,6 +15,8 @@ Page({
     appName: "Marry"
   },
   onLoad: function(options) {
+
+    console.log('onLoad')
     var that = this
 
     //获取宿主用户Id

@@ -142,7 +142,7 @@ Page({
     });
 
   },
-  /**
+  /**#e2211c;
    * 选择图片
    */
   chooseImage: function() {

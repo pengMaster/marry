@@ -31,7 +31,7 @@
  - 服务器：阿里云服务
  - 域名：pengmaster.com
  - 数据库：在服务器上装的mysql
- - 后台地址：https://github.com/pengMaster/marry_server
+ - 后台地址：https://github.com/pengMaster/marry_server（服务端相关问题去这里看）
  - 后台统计地址：https://pengmaster.com/party/marry
  - 项目中引用的网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片禁止传播。
 - 功能简介：
@@ -39,6 +39,22 @@
     - 婚礼现场导航
     - 点赞祝福，分享好友
     - 身份切换，制作属于自己的请柬
+
+#### 数据库表讲解
+
+表名 | 讲解 | 
+-|-
+T_BLESS_COMMENT | 评论表 | 
+T_BLESS_USER | 点赞用户 | 
+T_DETAIL_IMAGES | 首页图片详情表 | 
+T_HOST_USER | 在你的小程序上创建的用户表 | 
+T_IMAGE | 首页图片表 | 
+T_MAP_INFO | 地图信息表 | 
+T_SHARE_INFO | 分享页面信息表 | 
+T_STATUS | 审核隐藏分享按钮表 0隐藏 1 显示 | 
+T_USER_LOGO | 用户logo表 | 
+T_USER_RECORD | 用户进入记录表 | 
+T_USER | 独立用户表 | 
 
 ---
 

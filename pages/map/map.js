@@ -95,8 +95,8 @@ Page({
    */
   markertap(e) {
     wx.openLocation({
-      latitude: inviteLatitude,
-      longitude: inviteLongitude,
+      latitude: parseFloat(inviteLatitude),
+      longitude: parseFloat(inviteLongitude),
       scale: 18,
       name: '',
       address: ''
