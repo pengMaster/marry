@@ -135,6 +135,7 @@ Page({
         bannerId: id
       },
       success: function (res) {
+        console.log(res)
         if (200 == res.statusCode) {
           if (null != res.data && res.data.length >= 1) {
             for(var i=0;i<res.data.length;i++){
