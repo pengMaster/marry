@@ -31,6 +31,7 @@
  - 服务器：阿里云服务
  - 域名：pengmaster.com
  - 数据库：在服务器上装的mysql
+ - mpvue前端版本：https://github.com/HowToRun/wxdemo
  - 后台地址（服务端相关问题去这里看）：https://github.com/pengMaster/marry_server
  - 后台统计地址：https://pengmaster.com/party/marry
  - 项目中引用的网络资源若有侵权，请通知及时删除。该小程序为个人开发，一切解释权归作者所有，图片禁止传播。
