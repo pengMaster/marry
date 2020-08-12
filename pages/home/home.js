@@ -5,7 +5,7 @@ var app = getApp()
 var inputName = ''
 var imgUrlsDefault = []
 
-var musicUrl = 'http://www.ytmp3.cn/down/49676.mp3'
+var musicUrl = 'http://music.163.com/song/media/outer/url?id=1447509197.mp3'
 
 
 //数据可用接口返回 - 在此展示只是为了方便查看数据体
