@@ -61,7 +61,7 @@ T_USER | 独立用户表 |
 
 | 生活需要仪式感 |
 | ---- |
-|![baidu](https://github.com/pengMaster/picApplyGit/blob/master/jokeImg/poem.png) |
+|![生活需要仪式感](https://github.com/pengMaster/picApplyGit/blob/master/jokeImg/poem.png) |
 
   
 #### 个人说明
